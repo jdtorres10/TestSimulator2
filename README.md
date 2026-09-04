@@ -18,9 +18,9 @@ A bilingual (English / Spanish) practice simulator for the **2025 USCIS citizens
 - **Resumable** — an unfinished exam is saved on the device (localStorage) for up to 1 week.
 - **State-aware** — **Virginia (11), North Carolina (14), Maryland (8)** — full congressional-district data. The user picks their state, enters a **ZIP code** (suggests a district), then confirms/overrides via the picker. *(D.C. is out of scope.)*
 
-## Known follow-up
+## ZIP → district data
 
-- `data/zip_districts.json` ships **empty on purpose** — VA/NC/MD all changed maps recently, so no stale ZIP→district crosswalk is bundled. Populate it from a verified current source to enable ZIP suggestions; until then the manual district picker guarantees the correct answer.
+`data/zip_districts.json` is built from the **U.S. Census Bureau 119th-Congress CD → 2020 ZCTA relationship file** (`tab20_cd11920_zcta520_natl.txt`), which matches the representatives elected in 2024 (serving through Jan 2027). Coverage: VA 907 ZIPs, NC 853, MD 478. For ZIPs that straddle two districts, the district with the **largest land-area overlap** is chosen, and the app always lets the user **confirm or override**. Rebuild from the next relationship file after redistricting. (Regenerate via `scratchpad/build_zips.py`.)
 
 ## Project layout
 
