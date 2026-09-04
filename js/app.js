@@ -385,6 +385,14 @@
     var v = el("div", "verdict"); v.appendChild(document.createTextNode((correct ? "✓ " : "✕ ") + (correct ? t("correct") : t("incorrect")))); fb.appendChild(v);
     var off = el("div", "official"); off.appendChild(el("b", null, t("correctAnswer") + ": ")); off.appendChild(document.createTextNode(q.correctText)); fb.appendChild(off);
     if (q.correctAlt) fb.appendChild(el("div", "official alt-en", q.correctAlt));
+    // For questions with several acceptable answers, list them all (study aid).
+    if (q.acceptableAll && q.acceptableAll.length > 1) {
+      var all = el("div", "official all-acc");
+      all.appendChild(el("b", null, t("allAcceptable") + ": "));
+      all.appendChild(document.createTextNode(q.acceptableAll.map(function (a) { return a[lang]; }).join("; ")));
+      fb.appendChild(all);
+      if (lang === "es") fb.appendChild(el("div", "official alt-en", q.acceptableAll.map(function (a) { return a.en; }).join("; ")));
+    }
     return fb;
   }
 
@@ -453,7 +461,12 @@
       if (!a) { ra.appendChild(el("span", "tag skip", t("skipped"))); }
       else {
         ra.appendChild(el("span", "tag " + (a.correct ? "ok" : "no"), (a.correct ? "✓ " : "✕ ") + (a.correct ? t("correct") : t("incorrect"))));
-        ra.appendChild(el("div", null, t("correctAnswer") + ": " + (a.correctText || "")));
+        if (q.acceptable && q.acceptable.length > 1) {
+          ra.appendChild(el("div", null, t("allAcceptable") + ": " + q.acceptable.map(function (x) { return x[lang]; }).join("; ")));
+          if (showAlt) ra.appendChild(el("div", "alt-en", q.acceptable.map(function (x) { return x.en; }).join("; ")));
+        } else {
+          ra.appendChild(el("div", null, t("correctAnswer") + ": " + (a.correctText || "")));
+        }
       }
       item.appendChild(ra); rev.appendChild(item);
     });
