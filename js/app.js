@@ -90,10 +90,31 @@
       q.acceptable.forEach(function (a) { arr.push({ en: a.en, es: a.es, qid: q.id }); });
     });
   }
+  // Numeric-answer questions should only get same-shaped number distractors
+  // (a "how long" question shows durations, not "The Supreme Court").
+  var NUM_DURATIONS = [{ en: "2 years", es: "2 años" }, { en: "4 years", es: "4 años" }, { en: "6 years", es: "6 años" }, { en: "8 years", es: "8 años" }, { en: "10 years", es: "10 años" }];
+  var NUM_YEARS = ["1776", "1787", "1865", "1870", "1920", "1929", "1941", "2001"].map(function (n) { return { en: n, es: n }; });
+  var NUM_COUNTS = ["2", "5", "9", "13", "25", "50", "100", "435"].map(function (n) { return { en: n, es: n }; });
+  function numShape(s) {
+    s = String(s).trim();
+    if (/\d+\s*(years?|años?)/i.test(s)) return "dur";
+    if (/^\d{4}$/.test(s)) return "year";
+    if (/^\d{1,3}$/.test(s)) return "count";
+    return null;
+  }
   // 3 distractors from the same category, excluding any answer acceptable for THIS question.
   function autoDistractors(q) {
     var exclude = {};
     q.acceptable.forEach(function (a) { exclude[a.en.toLowerCase()] = true; });
+    // Pure single-number answers -> same-shape numeric distractors only.
+    var shape = (q.acceptable.length === 1) ? numShape(q.acceptable[0].en) : null;
+    if (shape) {
+      var seenN = {}, poolN = [];
+      function addN(p) { var k = p.en.toLowerCase(); if (exclude[k] || seenN[k]) return; seenN[k] = true; poolN.push({ en: p.en, es: p.es }); }
+      (DATA.poolByCat[q.cat] || []).forEach(function (p) { if (p.qid !== q.id && numShape(p.en) === shape) addN(p); });
+      (shape === "dur" ? NUM_DURATIONS : shape === "year" ? NUM_YEARS : NUM_COUNTS).forEach(addN);
+      return sample(poolN, 3);
+    }
     var seen = {}, pool = [];
     (DATA.poolByCat[q.cat] || []).forEach(function (p) {
       var key = p.en.toLowerCase();
