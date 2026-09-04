@@ -1,0 +1,2837 @@
+{
+  "_meta": {
+    "source": "USCIS 2025 Civics Test (128), verbatim stems + acceptable answers",
+    "design": "Correct answer rotates among 'acceptable'; distractors auto-generated at runtime from other same-category answers. Dynamic items resolved from lookup data. Scope: VA/NC/MD (no D.C.), MC only.",
+    "count": 128
+  },
+  "categories": [
+    {
+      "key": "principles",
+      "en": "American Government: Principles",
+      "es": "Gobierno estadounidense: Principios",
+      "range": "1-15"
+    },
+    {
+      "key": "system",
+      "en": "System of Government",
+      "es": "Sistema de gobierno",
+      "range": "16-62"
+    },
+    {
+      "key": "rights",
+      "en": "Rights & Responsibilities",
+      "es": "Derechos y responsabilidades",
+      "range": "63-72"
+    },
+    {
+      "key": "colonial",
+      "en": "Colonial Period & Independence",
+      "es": "Periodo colonial e independencia",
+      "range": "73-89"
+    },
+    {
+      "key": "s1800s",
+      "en": "The 1800s",
+      "es": "Los años 1800",
+      "range": "90-99"
+    },
+    {
+      "key": "recent",
+      "en": "Recent American History",
+      "es": "Historia estadounidense reciente",
+      "range": "100-116"
+    },
+    {
+      "key": "symbols",
+      "en": "Geography, Symbols & Holidays",
+      "es": "Geografía, símbolos y días festivos",
+      "range": "117-128"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "What is the form of government of the United States?",
+        "es": "¿Cuál es la forma de gobierno de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Republic",
+          "es": "República"
+        },
+        {
+          "en": "Constitution-based federal republic",
+          "es": "república federal basada en la Constitución"
+        },
+        {
+          "en": "representative democracy",
+          "es": "democracia representativa"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "What is the supreme law of the land?",
+        "es": "¿Cuál es la ley suprema del país?"
+      },
+      "acceptable": [
+        {
+          "en": "The U.S. Constitution",
+          "es": "La Constitución de los Estados Unidos"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "Name one thing the U.S. Constitution does.",
+        "es": "Mencione una cosa que hace la Constitución de los Estados Unidos."
+      },
+      "acceptable": [
+        {
+          "en": "Forms the government",
+          "es": "Establece el gobierno"
+        },
+        {
+          "en": "defines the powers of government",
+          "es": "define los poderes del gobierno"
+        },
+        {
+          "en": "defines the parts of government",
+          "es": "define las partes del gobierno"
+        },
+        {
+          "en": "protects the rights of the people",
+          "es": "protege los derechos del pueblo"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "The U.S. Constitution starts with the words “We the People.” What does “We the People” mean?",
+        "es": "La Constitución de los Estados Unidos comienza con las palabras “We the People”. ¿Qué significa “We the People”?"
+      },
+      "acceptable": [
+        {
+          "en": "Self-government",
+          "es": "Autogobierno"
+        },
+        {
+          "en": "popular sovereignty",
+          "es": "soberanía popular"
+        },
+        {
+          "en": "consent of the governed",
+          "es": "consentimiento de los gobernados"
+        },
+        {
+          "en": "people should govern themselves",
+          "es": "el pueblo debe gobernarse a sí mismo"
+        },
+        {
+          "en": "social contract",
+          "es": "contrato social"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "How are changes made to the U.S. Constitution?",
+        "es": "¿Cómo se hacen cambios a la Constitución de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Amendments",
+          "es": "Enmiendas"
+        },
+        {
+          "en": "the amendment process",
+          "es": "el proceso de enmienda"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "What does the Bill of Rights protect?",
+        "es": "¿Qué protege la Declaración de Derechos (Bill of Rights)?"
+      },
+      "acceptable": [
+        {
+          "en": "The basic rights of Americans",
+          "es": "Los derechos básicos de los estadounidenses"
+        },
+        {
+          "en": "the basic rights of people living in the United States",
+          "es": "los derechos básicos de las personas que viven en los Estados Unidos"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "How many amendments does the U.S. Constitution have?",
+        "es": "¿Cuántas enmiendas tiene la Constitución de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "27",
+          "es": "27"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "Why is the Declaration of Independence important?",
+        "es": "¿Por qué es importante la Declaración de Independencia?"
+      },
+      "acceptable": [
+        {
+          "en": "It says America is free from British control",
+          "es": "Dice que Estados Unidos es libre del control británico"
+        },
+        {
+          "en": "says all people are created equal",
+          "es": "dice que todas las personas son creadas iguales"
+        },
+        {
+          "en": "identifies inherent rights",
+          "es": "identifica derechos inherentes"
+        },
+        {
+          "en": "identifies individual freedoms",
+          "es": "identifica libertades individuales"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "What founding document said the American colonies were free from Britain?",
+        "es": "¿Qué documento fundacional declaró que las colonias americanas eran libres de Gran Bretaña?"
+      },
+      "acceptable": [
+        {
+          "en": "Declaration of Independence",
+          "es": "Declaración de Independencia"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "Name two important ideas from the Declaration of Independence and the U.S. Constitution.",
+        "es": "Mencione dos ideas importantes de la Declaración de Independencia y la Constitución de los Estados Unidos."
+      },
+      "acceptable": [
+        {
+          "en": "Equality",
+          "es": "Igualdad"
+        },
+        {
+          "en": "liberty",
+          "es": "libertad"
+        },
+        {
+          "en": "social contract",
+          "es": "contrato social"
+        },
+        {
+          "en": "natural rights",
+          "es": "derechos naturales"
+        },
+        {
+          "en": "limited government",
+          "es": "gobierno limitado"
+        },
+        {
+          "en": "self-government",
+          "es": "autogobierno"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "The words “Life, Liberty, and the pursuit of Happiness” are in what founding document?",
+        "es": "¿En qué documento fundacional aparecen las palabras “Vida, Libertad y la búsqueda de la Felicidad”?"
+      },
+      "acceptable": [
+        {
+          "en": "Declaration of Independence",
+          "es": "Declaración de Independencia"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "What is the economic system of the United States?",
+        "es": "¿Cuál es el sistema económico de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Capitalism",
+          "es": "Capitalismo"
+        },
+        {
+          "en": "free-market economy",
+          "es": "economía de libre mercado"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "What is the rule of law?",
+        "es": "¿Qué es el estado de derecho?"
+      },
+      "acceptable": [
+        {
+          "en": "Everyone must follow the law",
+          "es": "Todos deben obedecer la ley"
+        },
+        {
+          "en": "leaders must obey the law",
+          "es": "los líderes deben obedecer la ley"
+        },
+        {
+          "en": "government must obey the law",
+          "es": "el gobierno debe obedecer la ley"
+        },
+        {
+          "en": "no one is above the law",
+          "es": "nadie está por encima de la ley"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "Many documents influenced the U.S. Constitution. Name one.",
+        "es": "Muchos documentos influyeron en la Constitución de los Estados Unidos. Mencione uno."
+      },
+      "acceptable": [
+        {
+          "en": "Declaration of Independence",
+          "es": "Declaración de Independencia"
+        },
+        {
+          "en": "Articles of Confederation",
+          "es": "Artículos de la Confederación"
+        },
+        {
+          "en": "Federalist Papers",
+          "es": "Documentos Federalistas"
+        },
+        {
+          "en": "Anti-Federalist Papers",
+          "es": "Documentos Antifederalistas"
+        },
+        {
+          "en": "Virginia Declaration of Rights",
+          "es": "Declaración de Derechos de Virginia"
+        },
+        {
+          "en": "Fundamental Orders of Connecticut",
+          "es": "Órdenes Fundamentales de Connecticut"
+        },
+        {
+          "en": "Mayflower Compact",
+          "es": "Pacto del Mayflower"
+        },
+        {
+          "en": "Iroquois Great Law of Peace",
+          "es": "Gran Ley de la Paz de los Iroqueses"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "cat": "principles",
+      "dynamic": null,
+      "q": {
+        "en": "There are three branches of government. Why?",
+        "es": "Hay tres ramas del gobierno. ¿Por qué?"
+      },
+      "acceptable": [
+        {
+          "en": "So one part does not become too powerful",
+          "es": "Para que una parte no se vuelva demasiado poderosa"
+        },
+        {
+          "en": "checks and balances",
+          "es": "controles y equilibrios"
+        },
+        {
+          "en": "separation of powers",
+          "es": "separación de poderes"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Name the three branches of government.",
+        "es": "Mencione las tres ramas del gobierno."
+      },
+      "acceptable": [
+        {
+          "en": "Legislative, executive, and judicial",
+          "es": "Legislativa, ejecutiva y judicial"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "The President of the United States is in charge of which branch of government?",
+        "es": "¿De qué rama del gobierno está a cargo el Presidente de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Executive branch",
+          "es": "Rama ejecutiva"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "What part of the federal government writes laws?",
+        "es": "¿Qué parte del gobierno federal redacta las leyes?"
+      },
+      "acceptable": [
+        {
+          "en": "Congress",
+          "es": "El Congreso"
+        },
+        {
+          "en": "the legislature",
+          "es": "la legislatura"
+        },
+        {
+          "en": "legislative branch",
+          "es": "la rama legislativa"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "What are the two parts of the U.S. Congress?",
+        "es": "¿Cuáles son las dos partes del Congreso de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Senate and House of Representatives",
+          "es": "Senado y Cámara de Representantes"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Name one power of the U.S. Congress.",
+        "es": "Mencione un poder del Congreso de los Estados Unidos."
+      },
+      "acceptable": [
+        {
+          "en": "Writes laws",
+          "es": "Redacta leyes"
+        },
+        {
+          "en": "declares war",
+          "es": "declara la guerra"
+        },
+        {
+          "en": "makes the federal budget",
+          "es": "crea el presupuesto federal"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "How many U.S. senators are there?",
+        "es": "¿Cuántos senadores de los Estados Unidos hay?"
+      },
+      "acceptable": [
+        {
+          "en": "100",
+          "es": "100"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "How long is a term for a U.S. senator?",
+        "es": "¿Cuánto dura el mandato de un senador de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "6 years",
+          "es": "6 años"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "cat": "system",
+      "dynamic": "senator",
+      "q": {
+        "en": "Who is one of your state’s U.S. senators now?",
+        "es": "¿Quién es uno de los senadores de los Estados Unidos de su estado actualmente?"
+      },
+      "acceptable": []
+    },
+    {
+      "id": 24,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "How many voting members are in the House of Representatives?",
+        "es": "¿Cuántos miembros con derecho a voto hay en la Cámara de Representantes?"
+      },
+      "acceptable": [
+        {
+          "en": "435",
+          "es": "435"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "How long is a term for a member of the House of Representatives?",
+        "es": "¿Cuánto dura el mandato de un miembro de la Cámara de Representantes?"
+      },
+      "acceptable": [
+        {
+          "en": "2 years",
+          "es": "2 años"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Why do U.S. representatives serve shorter terms than U.S. senators?",
+        "es": "¿Por qué los representantes de los Estados Unidos tienen mandatos más cortos que los senadores?"
+      },
+      "acceptable": [
+        {
+          "en": "To more closely follow public opinion",
+          "es": "Para seguir más de cerca la opinión pública"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "How many senators does each state have?",
+        "es": "¿Cuántos senadores tiene cada estado?"
+      },
+      "acceptable": [
+        {
+          "en": "2",
+          "es": "2"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Why does each state have two senators?",
+        "es": "¿Por qué cada estado tiene dos senadores?"
+      },
+      "acceptable": [
+        {
+          "en": "Equal representation",
+          "es": "Representación igualitaria"
+        },
+        {
+          "en": "the Great Compromise",
+          "es": "el Gran Compromiso"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "cat": "system",
+      "dynamic": "representative",
+      "q": {
+        "en": "Name your U.S. representative.",
+        "es": "Mencione el nombre de su representante de los Estados Unidos."
+      },
+      "acceptable": []
+    },
+    {
+      "id": 30,
+      "cat": "system",
+      "dynamic": "speaker",
+      "q": {
+        "en": "What is the name of the Speaker of the House of Representatives now?",
+        "es": "¿Cuál es el nombre del Presidente de la Cámara de Representantes actualmente?"
+      },
+      "acceptable": []
+    },
+    {
+      "id": 31,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Who does a U.S. senator represent?",
+        "es": "¿A quién representa un senador de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Citizens or people of their state",
+          "es": "Los ciudadanos o las personas de su estado"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Who elects U.S. senators?",
+        "es": "¿Quién elige a los senadores de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Citizens from their state",
+          "es": "Los ciudadanos de su estado"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Who does a member of the House of Representatives represent?",
+        "es": "¿A quién representa un miembro de la Cámara de Representantes?"
+      },
+      "acceptable": [
+        {
+          "en": "Citizens or people in their congressional district",
+          "es": "Los ciudadanos o las personas de su distrito congresional"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Who elects members of the House of Representatives?",
+        "es": "¿Quién elige a los miembros de la Cámara de Representantes?"
+      },
+      "acceptable": [
+        {
+          "en": "Citizens from their congressional district",
+          "es": "Los ciudadanos de su distrito congresional"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Some states have more representatives than other states. Why?",
+        "es": "Algunos estados tienen más representantes que otros. ¿Por qué?"
+      },
+      "acceptable": [
+        {
+          "en": "Because of the state’s population",
+          "es": "Debido a la población del estado"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "The President of the United States is elected for how many years?",
+        "es": "¿Por cuántos años se elige al Presidente de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "4 years",
+          "es": "4 años"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "The President of the United States can serve only two terms. Why?",
+        "es": "El Presidente de los Estados Unidos puede servir solamente dos mandatos. ¿Por qué?"
+      },
+      "acceptable": [
+        {
+          "en": "Because of the 22nd Amendment",
+          "es": "Por la Enmienda 22"
+        },
+        {
+          "en": "to keep the president from becoming too powerful",
+          "es": "para evitar que el presidente se vuelva demasiado poderoso"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "cat": "system",
+      "dynamic": "president",
+      "q": {
+        "en": "What is the name of the President of the United States now?",
+        "es": "¿Cuál es el nombre del Presidente de los Estados Unidos actualmente?"
+      },
+      "acceptable": []
+    },
+    {
+      "id": 39,
+      "cat": "system",
+      "dynamic": "vice_president",
+      "q": {
+        "en": "What is the name of the Vice President of the United States now?",
+        "es": "¿Cuál es el nombre del Vicepresidente de los Estados Unidos actualmente?"
+      },
+      "acceptable": []
+    },
+    {
+      "id": 40,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "If the president can no longer serve, who becomes president?",
+        "es": "Si el presidente ya no puede servir, ¿quién se convierte en presidente?"
+      },
+      "acceptable": [
+        {
+          "en": "The Vice President",
+          "es": "El Vicepresidente"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Name one power of the president.",
+        "es": "Mencione un poder del presidente."
+      },
+      "acceptable": [
+        {
+          "en": "Signs bills",
+          "es": "Firma proyectos de ley"
+        },
+        {
+          "en": "vetoes bills",
+          "es": "veta proyectos de ley"
+        },
+        {
+          "en": "enforces laws",
+          "es": "hace cumplir las leyes"
+        },
+        {
+          "en": "Commander in Chief",
+          "es": "Comandante en Jefe"
+        },
+        {
+          "en": "chief diplomat",
+          "es": "principal diplomático"
+        },
+        {
+          "en": "appoints federal judges",
+          "es": "nombra jueces federales"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Who is Commander in Chief of the U.S. military?",
+        "es": "¿Quién es el Comandante en Jefe de las fuerzas militares de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "The President",
+          "es": "El Presidente"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Who signs bills to become laws?",
+        "es": "¿Quién firma los proyectos de ley para convertirlos en leyes?"
+      },
+      "acceptable": [
+        {
+          "en": "The President",
+          "es": "El Presidente"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Who vetoes bills?",
+        "es": "¿Quién veta los proyectos de ley?"
+      },
+      "acceptable": [
+        {
+          "en": "The President",
+          "es": "El Presidente"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Who appoints federal judges?",
+        "es": "¿Quién nombra a los jueces federales?"
+      },
+      "acceptable": [
+        {
+          "en": "The President",
+          "es": "El Presidente"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "The executive branch has many parts. Name one.",
+        "es": "La rama ejecutiva tiene muchas partes. Mencione una."
+      },
+      "acceptable": [
+        {
+          "en": "President",
+          "es": "Presidente"
+        },
+        {
+          "en": "Cabinet",
+          "es": "Gabinete"
+        },
+        {
+          "en": "federal departments and agencies",
+          "es": "departamentos y agencias federales"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "What does the President’s Cabinet do?",
+        "es": "¿Qué hace el Gabinete del Presidente?"
+      },
+      "acceptable": [
+        {
+          "en": "Advises the President",
+          "es": "Aconseja al Presidente"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "What are two Cabinet-level positions?",
+        "es": "¿Cuáles son dos puestos a nivel del Gabinete?"
+      },
+      "acceptable": [
+        {
+          "en": "Secretary of State",
+          "es": "Secretario de Estado"
+        },
+        {
+          "en": "Secretary of Treasury",
+          "es": "Secretario del Tesoro"
+        },
+        {
+          "en": "Attorney General",
+          "es": "Fiscal General"
+        },
+        {
+          "en": "Secretary of Homeland Security",
+          "es": "Secretario de Seguridad Nacional"
+        },
+        {
+          "en": "Vice President",
+          "es": "Vicepresidente"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Why is the Electoral College important?",
+        "es": "¿Por qué es importante el Colegio Electoral?"
+      },
+      "acceptable": [
+        {
+          "en": "It decides who is elected president",
+          "es": "Decide quién es elegido presidente"
+        },
+        {
+          "en": "it provides a compromise between popular election and congressional selection",
+          "es": "proporciona un compromiso entre la elección popular y la selección por el Congreso"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "What is one part of the judicial branch?",
+        "es": "¿Cuál es una parte de la rama judicial?"
+      },
+      "acceptable": [
+        {
+          "en": "Supreme Court",
+          "es": "Corte Suprema"
+        },
+        {
+          "en": "federal courts",
+          "es": "tribunales federales"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "What does the judicial branch do?",
+        "es": "¿Qué hace la rama judicial?"
+      },
+      "acceptable": [
+        {
+          "en": "Reviews laws",
+          "es": "Revisa las leyes"
+        },
+        {
+          "en": "explains laws",
+          "es": "explica las leyes"
+        },
+        {
+          "en": "resolves legal disputes",
+          "es": "resuelve disputas legales"
+        },
+        {
+          "en": "decides whether a law goes against the Constitution",
+          "es": "decide si una ley va en contra de la Constitución"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "What is the highest court in the United States?",
+        "es": "¿Cuál es el tribunal más alto de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Supreme Court",
+          "es": "Corte Suprema"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "How many seats are on the Supreme Court?",
+        "es": "¿Cuántos puestos hay en la Corte Suprema?"
+      },
+      "acceptable": [
+        {
+          "en": "9",
+          "es": "9"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "How many Supreme Court justices are usually needed to decide a case?",
+        "es": "¿Cuántos jueces de la Corte Suprema generalmente se necesitan para decidir un caso?"
+      },
+      "acceptable": [
+        {
+          "en": "5",
+          "es": "5"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "How long do Supreme Court justices serve?",
+        "es": "¿Cuánto tiempo sirven los jueces de la Corte Suprema?"
+      },
+      "acceptable": [
+        {
+          "en": "For life",
+          "es": "De por vida"
+        },
+        {
+          "en": "lifetime appointment",
+          "es": "nombramiento de por vida"
+        },
+        {
+          "en": "until retirement",
+          "es": "hasta su jubilación"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Supreme Court justices serve for life. Why?",
+        "es": "Los jueces de la Corte Suprema sirven de por vida. ¿Por qué?"
+      },
+      "acceptable": [
+        {
+          "en": "To be independent of politics",
+          "es": "Para ser independientes de la política"
+        },
+        {
+          "en": "to limit political influence",
+          "es": "para limitar la influencia política"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "cat": "system",
+      "dynamic": "chief_justice",
+      "q": {
+        "en": "Who is the Chief Justice of the United States now?",
+        "es": "¿Quién es el Presidente de la Corte Suprema de los Estados Unidos actualmente?"
+      },
+      "acceptable": []
+    },
+    {
+      "id": 58,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Name one power that is only for the federal government.",
+        "es": "Mencione un poder que corresponde solamente al gobierno federal."
+      },
+      "acceptable": [
+        {
+          "en": "Print paper money",
+          "es": "Imprimir papel moneda"
+        },
+        {
+          "en": "mint coins",
+          "es": "acuñar monedas"
+        },
+        {
+          "en": "declare war",
+          "es": "declarar la guerra"
+        },
+        {
+          "en": "create an army",
+          "es": "crear un ejército"
+        },
+        {
+          "en": "make treaties",
+          "es": "hacer tratados"
+        },
+        {
+          "en": "set foreign policy",
+          "es": "establecer la política exterior"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "Name one power that is only for the states.",
+        "es": "Mencione un poder que corresponde solamente a los estados."
+      },
+      "acceptable": [
+        {
+          "en": "Provide schooling",
+          "es": "Proporcionar educación"
+        },
+        {
+          "en": "provide police protection",
+          "es": "proporcionar protección policial"
+        },
+        {
+          "en": "provide fire safety",
+          "es": "proporcionar servicios de bomberos"
+        },
+        {
+          "en": "issue driver's licenses",
+          "es": "emitir licencias de conducir"
+        },
+        {
+          "en": "approve zoning and land use",
+          "es": "aprobar zonificación y uso de terrenos"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "cat": "system",
+      "dynamic": null,
+      "q": {
+        "en": "What is the purpose of the 10th Amendment?",
+        "es": "¿Cuál es el propósito de la Décima Enmienda?"
+      },
+      "acceptable": [
+        {
+          "en": "Powers not given to the federal government belong to the states or the people",
+          "es": "Los poderes que no se otorgan al gobierno federal pertenecen a los estados o al pueblo"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "cat": "system",
+      "dynamic": "governor",
+      "q": {
+        "en": "Who is the governor of your state now?",
+        "es": "¿Quién es el gobernador de su estado actualmente?"
+      },
+      "acceptable": []
+    },
+    {
+      "id": 62,
+      "cat": "system",
+      "dynamic": "capital",
+      "q": {
+        "en": "What is the capital of your state?",
+        "es": "¿Cuál es la capital de su estado?"
+      },
+      "acceptable": []
+    },
+    {
+      "id": 63,
+      "cat": "rights",
+      "dynamic": null,
+      "q": {
+        "en": "There are four amendments to the U.S. Constitution about who can vote. Describe one of them.",
+        "es": "Hay cuatro enmiendas a la Constitución de los Estados Unidos sobre quién puede votar. Describa una."
+      },
+      "acceptable": [
+        {
+          "en": "Citizens 18 and older can vote",
+          "es": "Los ciudadanos de 18 años o más pueden votar"
+        },
+        {
+          "en": "no poll tax",
+          "es": "no se puede cobrar un impuesto para votar"
+        },
+        {
+          "en": "women and men can vote",
+          "es": "las mujeres y los hombres pueden votar"
+        },
+        {
+          "en": "male citizens of any race can vote",
+          "es": "los ciudadanos varones de cualquier raza pueden votar"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "cat": "rights",
+      "dynamic": null,
+      "q": {
+        "en": "Who can vote in federal elections, run for federal office, and serve on a jury in the United States?",
+        "es": "¿Quién puede votar en elecciones federales, postularse para un cargo federal y servir en un jurado en los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "U.S. citizens",
+          "es": "Ciudadanos estadounidenses"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "cat": "rights",
+      "dynamic": null,
+      "q": {
+        "en": "What are three rights of everyone living in the United States?",
+        "es": "¿Cuáles son tres derechos de todas las personas que viven en los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Freedom of speech/expression",
+          "es": "Libertad de expresión"
+        },
+        {
+          "en": "freedom of assembly",
+          "es": "libertad de reunión"
+        },
+        {
+          "en": "freedom to petition the government",
+          "es": "libertad de presentar peticiones al gobierno"
+        },
+        {
+          "en": "freedom of religion",
+          "es": "libertad de religión"
+        },
+        {
+          "en": "right to bear arms",
+          "es": "derecho a portar armas"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "cat": "rights",
+      "dynamic": null,
+      "q": {
+        "en": "What do we show loyalty to when we say the Pledge of Allegiance?",
+        "es": "¿A qué mostramos lealtad cuando decimos el Juramento de Lealtad (Pledge of Allegiance)?"
+      },
+      "acceptable": [
+        {
+          "en": "The United States",
+          "es": "Los Estados Unidos"
+        },
+        {
+          "en": "the flag",
+          "es": "la bandera"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "cat": "rights",
+      "dynamic": null,
+      "q": {
+        "en": "Name two promises that new citizens make in the Oath of Allegiance.",
+        "es": "Mencione dos promesas que hacen los nuevos ciudadanos en el Juramento de Lealtad."
+      },
+      "acceptable": [
+        {
+          "en": "Give up loyalty to other countries",
+          "es": "Renunciar a la lealtad a otros países"
+        },
+        {
+          "en": "defend the Constitution",
+          "es": "defender la Constitución"
+        },
+        {
+          "en": "obey U.S. laws",
+          "es": "obedecer las leyes de EE. UU"
+        },
+        {
+          "en": "serve in the military if needed",
+          "es": "servir en las fuerzas armadas si es necesario"
+        },
+        {
+          "en": "serve the nation if needed",
+          "es": "servir al país si es necesario"
+        },
+        {
+          "en": "be loyal to the United States",
+          "es": "ser leal a los Estados Unidos"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "cat": "rights",
+      "dynamic": null,
+      "q": {
+        "en": "How can people become United States citizens?",
+        "es": "¿Cómo pueden las personas convertirse en ciudadanos de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Be born in the United States under the conditions of the 14th Amendment",
+          "es": "Nacer en los Estados Unidos bajo las condiciones de la Decimocuarta Enmienda"
+        },
+        {
+          "en": "naturalize",
+          "es": "naturalizarse"
+        },
+        {
+          "en": "derive citizenship under conditions set by Congress",
+          "es": "obtener la ciudadanía derivada bajo las condiciones establecidas por el Congreso"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "cat": "rights",
+      "dynamic": null,
+      "q": {
+        "en": "What are two examples of civic participation in the United States?",
+        "es": "¿Cuáles son dos ejemplos de participación cívica en los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Vote",
+          "es": "Votar"
+        },
+        {
+          "en": "run for office",
+          "es": "postularse para un cargo"
+        },
+        {
+          "en": "join a political party",
+          "es": "unirse a un partido político"
+        },
+        {
+          "en": "help with a campaign",
+          "es": "ayudar en una campaña"
+        },
+        {
+          "en": "join a civic/community group",
+          "es": "unirse a un grupo cívico/comunitario"
+        },
+        {
+          "en": "contact elected officials",
+          "es": "contactar a funcionarios electos"
+        },
+        {
+          "en": "support or oppose an issue",
+          "es": "apoyar u oponerse a un tema"
+        },
+        {
+          "en": "write to a newspaper",
+          "es": "escribir a un periódico"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "cat": "rights",
+      "dynamic": null,
+      "q": {
+        "en": "What is one way Americans can serve their country?",
+        "es": "¿Cuál es una manera en que los estadounidenses pueden servir a su país?"
+      },
+      "acceptable": [
+        {
+          "en": "Vote",
+          "es": "Votar"
+        },
+        {
+          "en": "pay taxes",
+          "es": "pagar impuestos"
+        },
+        {
+          "en": "obey the law",
+          "es": "obedecer la ley"
+        },
+        {
+          "en": "serve in the military",
+          "es": "servir en las fuerzas armadas"
+        },
+        {
+          "en": "run for office",
+          "es": "postularse para un cargo"
+        },
+        {
+          "en": "work for the government",
+          "es": "trabajar para el gobierno"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "cat": "rights",
+      "dynamic": null,
+      "q": {
+        "en": "Why is it important to pay federal taxes?",
+        "es": "¿Por qué es importante pagar impuestos federales?"
+      },
+      "acceptable": [
+        {
+          "en": "Required by law",
+          "es": "Es requerido por la ley"
+        },
+        {
+          "en": "funds the federal government",
+          "es": "financia al gobierno federal"
+        },
+        {
+          "en": "required by the Constitution/16th Amendment",
+          "es": "es requerido por la Constitución/Decimosexta Enmienda"
+        },
+        {
+          "en": "civic duty",
+          "es": "es un deber cívico"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "cat": "rights",
+      "dynamic": null,
+      "q": {
+        "en": "It is important for all men age 18 through 25 to register for the Selective Service. Name one reason why.",
+        "es": "Es importante que todos los hombres de 18 a 25 años se registren en el Servicio Selectivo. Mencione una razón."
+      },
+      "acceptable": [
+        {
+          "en": "Required by law",
+          "es": "Es requerido por ley"
+        },
+        {
+          "en": "civic duty",
+          "es": "es un deber cívico"
+        },
+        {
+          "en": "makes the draft fair if needed",
+          "es": "hace que el reclutamiento sea justo si es necesario"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "The colonists came to America for many reasons. Name one.",
+        "es": "Los colonos llegaron a América por muchas razones. Mencione una."
+      },
+      "acceptable": [
+        {
+          "en": "Freedom",
+          "es": "Libertad"
+        },
+        {
+          "en": "political liberty",
+          "es": "libertad política"
+        },
+        {
+          "en": "religious freedom",
+          "es": "libertad religiosa"
+        },
+        {
+          "en": "economic opportunity",
+          "es": "oportunidad económica"
+        },
+        {
+          "en": "escape persecution",
+          "es": "escapar de la persecución"
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "Who lived in America before the Europeans arrived?",
+        "es": "¿Quiénes vivían en América antes de la llegada de los europeos?"
+      },
+      "acceptable": [
+        {
+          "en": "American Indians",
+          "es": "Indígenas americanos"
+        },
+        {
+          "en": "Native Americans",
+          "es": "nativos americanos"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "What group of people was taken and sold as slaves?",
+        "es": "¿Qué grupo de personas fue llevado y vendido como esclavos?"
+      },
+      "acceptable": [
+        {
+          "en": "Africans",
+          "es": "Africanos"
+        },
+        {
+          "en": "people from Africa",
+          "es": "personas de África"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "What war did the Americans fight to win independence from Britain?",
+        "es": "¿Qué guerra libraron los estadounidenses para obtener la independencia de Gran Bretaña?"
+      },
+      "acceptable": [
+        {
+          "en": "American Revolution",
+          "es": "Revolución Americana"
+        },
+        {
+          "en": "Revolutionary War",
+          "es": "Guerra Revolucionaria"
+        },
+        {
+          "en": "War for Independence",
+          "es": "Guerra por la Independencia"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "Name one reason why the Americans declared independence from Britain.",
+        "es": "Mencione una razón por la que los estadounidenses declararon su independencia de Gran Bretaña."
+      },
+      "acceptable": [
+        {
+          "en": "High taxes",
+          "es": "Impuestos altos"
+        },
+        {
+          "en": "taxation without representation",
+          "es": "impuestos sin representación"
+        },
+        {
+          "en": "no self-government",
+          "es": "falta de autogobierno"
+        },
+        {
+          "en": "Boston Massacre",
+          "es": "Masacre de Boston"
+        },
+        {
+          "en": "Boston Tea Party",
+          "es": "Motín del Té de Boston"
+        },
+        {
+          "en": "Stamp Act",
+          "es": "Ley del Timbre"
+        },
+        {
+          "en": "Sugar Act",
+          "es": "Ley del Azúcar"
+        },
+        {
+          "en": "Townshend Acts",
+          "es": "Leyes Townshend"
+        },
+        {
+          "en": "Intolerable Acts",
+          "es": "Leyes Intolerables"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "Who wrote the Declaration of Independence?",
+        "es": "¿Quién escribió la Declaración de Independencia?"
+      },
+      "acceptable": [
+        {
+          "en": "Thomas Jefferson",
+          "es": "Thomas Jefferson"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "When was the Declaration of Independence adopted?",
+        "es": "¿Cuándo fue adoptada la Declaración de Independencia?"
+      },
+      "acceptable": [
+        {
+          "en": "July 4, 1776",
+          "es": "4 de julio de 1776"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "The American Revolution had many important events. Name one.",
+        "es": "La Revolución Americana tuvo muchos acontecimientos importantes. Mencione uno."
+      },
+      "acceptable": [
+        {
+          "en": "Battle of Bunker Hill",
+          "es": "Batalla de Bunker Hill"
+        },
+        {
+          "en": "Declaration of Independence",
+          "es": "Declaración de Independencia"
+        },
+        {
+          "en": "Washington Crossing the Delaware/Battle of Trenton",
+          "es": "Washington cruzando el Delaware/Batalla de Trenton"
+        },
+        {
+          "en": "Saratoga",
+          "es": "Saratoga"
+        },
+        {
+          "en": "Valley Forge",
+          "es": "Valley Forge"
+        },
+        {
+          "en": "Yorktown",
+          "es": "Yorktown"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "There were 13 original states. Name five.",
+        "es": "Había 13 estados originales. Mencione cinco."
+      },
+      "acceptable": [
+        {
+          "en": "New Hampshire",
+          "es": "Nuevo Hampshire"
+        },
+        {
+          "en": "Massachusetts",
+          "es": "Massachusetts"
+        },
+        {
+          "en": "Rhode Island",
+          "es": "Rhode Island"
+        },
+        {
+          "en": "Connecticut",
+          "es": "Connecticut"
+        },
+        {
+          "en": "New York",
+          "es": "Nueva York"
+        },
+        {
+          "en": "New Jersey",
+          "es": "Nueva Jersey"
+        },
+        {
+          "en": "Pennsylvania",
+          "es": "Pensilvania"
+        },
+        {
+          "en": "Delaware",
+          "es": "Delaware"
+        },
+        {
+          "en": "Maryland",
+          "es": "Maryland"
+        },
+        {
+          "en": "Virginia",
+          "es": "Virginia"
+        },
+        {
+          "en": "North Carolina",
+          "es": "Carolina del Norte"
+        },
+        {
+          "en": "South Carolina",
+          "es": "Carolina del Sur"
+        },
+        {
+          "en": "Georgia",
+          "es": "Georgia"
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "What founding document was written in 1787?",
+        "es": "¿Qué documento fundacional fue escrito en 1787?"
+      },
+      "acceptable": [
+        {
+          "en": "U.S. Constitution",
+          "es": "Constitución de los Estados Unidos"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.",
+        "es": "Los Documentos Federalistas apoyaron la aprobación de la Constitución. Mencione uno de sus autores."
+      },
+      "acceptable": [
+        {
+          "en": "James Madison",
+          "es": "James Madison"
+        },
+        {
+          "en": "Alexander Hamilton",
+          "es": "Alexander Hamilton"
+        },
+        {
+          "en": "John Jay",
+          "es": "John Jay"
+        },
+        {
+          "en": "Publius",
+          "es": "Publius"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "Why were the Federalist Papers important?",
+        "es": "¿Por qué fueron importantes los Documentos Federalistas?"
+      },
+      "acceptable": [
+        {
+          "en": "They helped people understand the Constitution",
+          "es": "Ayudaron a las personas a entender la Constitución"
+        },
+        {
+          "en": "they supported passing the Constitution",
+          "es": "apoyaron la aprobación de la Constitución"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "Benjamin Franklin is famous for many things. Name one.",
+        "es": "Benjamin Franklin es famoso por muchas cosas. Mencione una."
+      },
+      "acceptable": [
+        {
+          "en": "Founded the first free public libraries",
+          "es": "Fundó las primeras bibliotecas públicas gratuitas"
+        },
+        {
+          "en": "first Postmaster General",
+          "es": "primer Director General de Correos"
+        },
+        {
+          "en": "helped write the Declaration of Independence",
+          "es": "ayudó a escribir la Declaración de Independencia"
+        },
+        {
+          "en": "inventor",
+          "es": "inventor"
+        },
+        {
+          "en": "U.S. diplomat",
+          "es": "diplomático estadounidense"
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "George Washington is famous for many things. Name one.",
+        "es": "George Washington es famoso por muchas cosas. Mencione una."
+      },
+      "acceptable": [
+        {
+          "en": "Father of Our Country",
+          "es": "Padre de Nuestra Patria"
+        },
+        {
+          "en": "first President",
+          "es": "primer Presidente"
+        },
+        {
+          "en": "General of the Continental Army",
+          "es": "General del Ejército Continental"
+        },
+        {
+          "en": "President of the Constitutional Convention",
+          "es": "Presidente de la Convención Constitucional"
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "Thomas Jefferson is famous for many things. Name one.",
+        "es": "Thomas Jefferson es famoso por muchas cosas. Mencione una."
+      },
+      "acceptable": [
+        {
+          "en": "Wrote the Declaration of Independence",
+          "es": "Escribió la Declaración de Independencia"
+        },
+        {
+          "en": "third President",
+          "es": "tercer Presidente"
+        },
+        {
+          "en": "Louisiana Purchase",
+          "es": "Compra de Luisiana"
+        },
+        {
+          "en": "first Secretary of State",
+          "es": "primer Secretario de Estado"
+        },
+        {
+          "en": "founded University of Virginia",
+          "es": "fundó la Universidad de Virginia"
+        },
+        {
+          "en": "wrote Virginia Statute on Religious Freedom",
+          "es": "escribió el Estatuto de Virginia para la Libertad Religiosa"
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "James Madison is famous for many things. Name one.",
+        "es": "James Madison es famoso por muchas cosas. Mencione una."
+      },
+      "acceptable": [
+        {
+          "en": "Father of the Constitution",
+          "es": "Padre de la Constitución"
+        },
+        {
+          "en": "fourth President",
+          "es": "cuarto Presidente"
+        },
+        {
+          "en": "President during War of 1812",
+          "es": "Presidente durante la Guerra de 1812"
+        },
+        {
+          "en": "Federalist Papers writer",
+          "es": "autor de los Documentos Federalistas"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "cat": "colonial",
+      "dynamic": null,
+      "q": {
+        "en": "Alexander Hamilton is famous for many things. Name one.",
+        "es": "Alexander Hamilton es famoso por muchas cosas. Mencione una."
+      },
+      "acceptable": [
+        {
+          "en": "First Secretary of the Treasury",
+          "es": "Primer Secretario del Tesoro"
+        },
+        {
+          "en": "Federalist Papers writer",
+          "es": "autor de los Documentos Federalistas"
+        },
+        {
+          "en": "helped establish First Bank",
+          "es": "ayudó a establecer el Primer Banco"
+        },
+        {
+          "en": "aide to Washington",
+          "es": "ayudante de Washington"
+        },
+        {
+          "en": "member of Continental Congress",
+          "es": "miembro del Congreso Continental"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "cat": "s1800s",
+      "dynamic": null,
+      "q": {
+        "en": "What territory did the United States buy from France in 1803?",
+        "es": "¿Qué territorio compró Estados Unidos a Francia en 1803?"
+      },
+      "acceptable": [
+        {
+          "en": "Louisiana Territory",
+          "es": "Territorio de Luisiana"
+        },
+        {
+          "en": "Louisiana",
+          "es": "Luisiana"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "cat": "s1800s",
+      "dynamic": null,
+      "q": {
+        "en": "Name one war fought by the United States in the 1800s.",
+        "es": "Mencione una guerra en la que Estados Unidos participó durante los años 1800."
+      },
+      "acceptable": [
+        {
+          "en": "War of 1812",
+          "es": "Guerra de 1812"
+        },
+        {
+          "en": "Mexican-American War",
+          "es": "Guerra México-Estadounidense"
+        },
+        {
+          "en": "Civil War",
+          "es": "Guerra Civil"
+        },
+        {
+          "en": "Spanish-American War",
+          "es": "Guerra Hispano-Estadounidense"
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "cat": "s1800s",
+      "dynamic": null,
+      "q": {
+        "en": "Name the U.S. war between the North and the South.",
+        "es": "¿Cuál fue la guerra estadounidense entre el Norte y el Sur?"
+      },
+      "acceptable": [
+        {
+          "en": "Civil War",
+          "es": "Guerra Civil"
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "cat": "s1800s",
+      "dynamic": null,
+      "q": {
+        "en": "The Civil War had many important events. Name one.",
+        "es": "La Guerra Civil tuvo muchos acontecimientos importantes. Mencione uno."
+      },
+      "acceptable": [
+        {
+          "en": "Fort Sumter",
+          "es": "Fort Sumter"
+        },
+        {
+          "en": "Emancipation Proclamation",
+          "es": "Proclamación de Emancipación"
+        },
+        {
+          "en": "Vicksburg",
+          "es": "Vicksburg"
+        },
+        {
+          "en": "Gettysburg",
+          "es": "Gettysburg"
+        },
+        {
+          "en": "Sherman’s March",
+          "es": "Marcha de Sherman"
+        },
+        {
+          "en": "Appomattox",
+          "es": "Appomattox"
+        },
+        {
+          "en": "Antietam",
+          "es": "Antietam"
+        },
+        {
+          "en": "Lincoln was assassinated",
+          "es": "Lincoln fue asesinado"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "cat": "s1800s",
+      "dynamic": null,
+      "q": {
+        "en": "Abraham Lincoln is famous for many things. Name one.",
+        "es": "Abraham Lincoln es famoso por muchas cosas. Mencione una."
+      },
+      "acceptable": [
+        {
+          "en": "Freed the slaves",
+          "es": "Liberó a los esclavos"
+        },
+        {
+          "en": "saved/preserved the Union",
+          "es": "salvó/preservó la Unión"
+        },
+        {
+          "en": "led the U.S. during the Civil War",
+          "es": "dirigió a EE. UU. durante la Guerra Civil"
+        },
+        {
+          "en": "16th President",
+          "es": "decimosexto Presidente"
+        },
+        {
+          "en": "Gettysburg Address",
+          "es": "Discurso de Gettysburg"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "cat": "s1800s",
+      "dynamic": null,
+      "q": {
+        "en": "What did the Emancipation Proclamation do?",
+        "es": "¿Qué hizo la Proclamación de Emancipación?"
+      },
+      "acceptable": [
+        {
+          "en": "Freed the slaves",
+          "es": "Liberó a los esclavos"
+        },
+        {
+          "en": "freed slaves in the Confederacy/Confederate states",
+          "es": "liberó a los esclavos en la Confederación/estados confederados"
+        },
+        {
+          "en": "freed slaves in most Southern states",
+          "es": "liberó a los esclavos en la mayoría de los estados del Sur"
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "cat": "s1800s",
+      "dynamic": null,
+      "q": {
+        "en": "What U.S. war ended slavery?",
+        "es": "¿Qué guerra de Estados Unidos terminó con la esclavitud?"
+      },
+      "acceptable": [
+        {
+          "en": "Civil War",
+          "es": "Guerra Civil"
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "cat": "s1800s",
+      "dynamic": null,
+      "q": {
+        "en": "What amendment says all persons born or naturalized in the United States, and subject to the jurisdiction thereof, are U.S. citizens?",
+        "es": "¿Qué enmienda establece que todas las personas nacidas o naturalizadas en los Estados Unidos y sujetas a su jurisdicción son ciudadanos estadounidenses?"
+      },
+      "acceptable": [
+        {
+          "en": "14th Amendment",
+          "es": "Decimocuarta Enmienda"
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "cat": "s1800s",
+      "dynamic": null,
+      "q": {
+        "en": "When did all men get the right to vote?",
+        "es": "¿Cuándo obtuvieron todos los hombres el derecho al voto?"
+      },
+      "acceptable": [
+        {
+          "en": "After the Civil War",
+          "es": "Después de la Guerra Civil"
+        },
+        {
+          "en": "during Reconstruction",
+          "es": "durante la Reconstrucción"
+        },
+        {
+          "en": "with the 15th Amendment",
+          "es": "con la Decimoquinta Enmienda"
+        },
+        {
+          "en": "1870",
+          "es": "1870"
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "cat": "s1800s",
+      "dynamic": null,
+      "q": {
+        "en": "Name one leader of the women’s rights movement in the 1800s.",
+        "es": "Mencione una líder del movimiento por los derechos de la mujer en los años 1800."
+      },
+      "acceptable": [
+        {
+          "en": "Susan B. Anthony",
+          "es": "Susan B. Anthony"
+        },
+        {
+          "en": "Elizabeth Cady Stanton",
+          "es": "Elizabeth Cady Stanton"
+        },
+        {
+          "en": "Sojourner Truth",
+          "es": "Sojourner Truth"
+        },
+        {
+          "en": "Harriet Tubman",
+          "es": "Harriet Tubman"
+        },
+        {
+          "en": "Lucretia Mott",
+          "es": "Lucretia Mott"
+        },
+        {
+          "en": "Lucy Stone",
+          "es": "Lucy Stone"
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "Name one war fought by the United States in the 1900s.",
+        "es": "Mencione una guerra en la que Estados Unidos participó durante los años 1900."
+      },
+      "acceptable": [
+        {
+          "en": "World War I",
+          "es": "Primera Guerra Mundial"
+        },
+        {
+          "en": "World War II",
+          "es": "Segunda Guerra Mundial"
+        },
+        {
+          "en": "Korean War",
+          "es": "Guerra de Corea"
+        },
+        {
+          "en": "Vietnam War",
+          "es": "Guerra de Vietnam"
+        },
+        {
+          "en": "Persian Gulf War",
+          "es": "Guerra del Golfo Pérsico"
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "Why did the United States enter World War I?",
+        "es": "¿Por qué entró Estados Unidos en la Primera Guerra Mundial?"
+      },
+      "acceptable": [
+        {
+          "en": "Germany attacked U.S. civilian ships",
+          "es": "Alemania atacó barcos civiles estadounidenses"
+        },
+        {
+          "en": "to support the Allied Powers",
+          "es": "para apoyar a las Potencias Aliadas"
+        },
+        {
+          "en": "to oppose the Central Powers",
+          "es": "para oponerse a las Potencias Centrales"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "When did all women get the right to vote?",
+        "es": "¿Cuándo obtuvieron todas las mujeres el derecho al voto?"
+      },
+      "acceptable": [
+        {
+          "en": "1920",
+          "es": "1920"
+        },
+        {
+          "en": "after World War I",
+          "es": "después de la Primera Guerra Mundial"
+        },
+        {
+          "en": "with the 19th Amendment",
+          "es": "con la Decimonovena Enmienda"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "What was the Great Depression?",
+        "es": "¿Qué fue la Gran Depresión?"
+      },
+      "acceptable": [
+        {
+          "en": "The longest economic recession in modern history",
+          "es": "La recesión económica más larga de la historia moderna"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "When did the Great Depression start?",
+        "es": "¿Cuándo comenzó la Gran Depresión?"
+      },
+      "acceptable": [
+        {
+          "en": "The Great Crash of 1929",
+          "es": "El Gran Crack de 1929"
+        },
+        {
+          "en": "stock market crash of 1929",
+          "es": "la caída de la bolsa de valores de 1929"
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "Who was president during the Great Depression and World War II?",
+        "es": "¿Quién fue presidente durante la Gran Depresión y la Segunda Guerra Mundial?"
+      },
+      "acceptable": [
+        {
+          "en": "Franklin Roosevelt",
+          "es": "Franklin Roosevelt"
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "Why did the United States enter World War II?",
+        "es": "¿Por qué entró Estados Unidos en la Segunda Guerra Mundial?"
+      },
+      "acceptable": [
+        {
+          "en": "Bombing of Pearl Harbor",
+          "es": "Bombardeo de Pearl Harbor"
+        },
+        {
+          "en": "Japan attacked Pearl Harbor",
+          "es": "Japón atacó Pearl Harbor"
+        },
+        {
+          "en": "to support the Allied Powers",
+          "es": "para apoyar a las Potencias Aliadas"
+        },
+        {
+          "en": "to oppose the Axis Powers",
+          "es": "para oponerse a las Potencias del Eje"
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "Dwight Eisenhower is famous for many things. Name one.",
+        "es": "Dwight Eisenhower es famoso por muchas cosas. Mencione una."
+      },
+      "acceptable": [
+        {
+          "en": "General during WWII",
+          "es": "General durante la Segunda Guerra Mundial"
+        },
+        {
+          "en": "President during/at the end of Korean War",
+          "es": "Presidente durante/al final de la Guerra de Corea"
+        },
+        {
+          "en": "34th President",
+          "es": "34.º Presidente"
+        },
+        {
+          "en": "signed Federal-Aid Highway Act of 1956",
+          "es": "firmó la Ley Federal de Ayuda para Carreteras de 1956"
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "Who was the United States’ main rival during the Cold War?",
+        "es": "¿Quién fue el principal rival de Estados Unidos durante la Guerra Fría?"
+      },
+      "acceptable": [
+        {
+          "en": "Soviet Union",
+          "es": "Unión Soviética"
+        },
+        {
+          "en": "USSR",
+          "es": "URSS"
+        },
+        {
+          "en": "Russia",
+          "es": "Rusia"
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "During the Cold War, what was one main concern of the United States?",
+        "es": "Durante la Guerra Fría, ¿cuál fue una de las principales preocupaciones de Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Communism",
+          "es": "Comunismo"
+        },
+        {
+          "en": "nuclear war",
+          "es": "guerra nuclear"
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "Why did the United States enter the Korean War?",
+        "es": "¿Por qué entró Estados Unidos en la Guerra de Corea?"
+      },
+      "acceptable": [
+        {
+          "en": "To stop the spread of communism",
+          "es": "Para detener la expansión del comunismo"
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "Why did the United States enter the Vietnam War?",
+        "es": "¿Por qué entró Estados Unidos en la Guerra de Vietnam?"
+      },
+      "acceptable": [
+        {
+          "en": "To stop the spread of communism",
+          "es": "Para detener la expansión del comunismo"
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "What did the civil rights movement do?",
+        "es": "¿Qué hizo el movimiento por los derechos civiles?"
+      },
+      "acceptable": [
+        {
+          "en": "Fought to end racial discrimination",
+          "es": "Luchó para terminar con la discriminación racial"
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "Martin Luther King, Jr. is famous for many things. Name one.",
+        "es": "Martin Luther King, Jr. es famoso por muchas cosas. Mencione una."
+      },
+      "acceptable": [
+        {
+          "en": "Fought for civil rights",
+          "es": "Luchó por los derechos civiles"
+        },
+        {
+          "en": "worked for equality for all Americans",
+          "es": "trabajó por la igualdad de todos los estadounidenses"
+        },
+        {
+          "en": "worked to ensure people were judged by their character rather than skin color",
+          "es": "trabajó para que las personas fueran juzgadas por su carácter y no por el color de su piel"
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "Why did the United States enter the Persian Gulf War?",
+        "es": "¿Por qué entró Estados Unidos en la Guerra del Golfo Pérsico?"
+      },
+      "acceptable": [
+        {
+          "en": "To force the Iraqi military from Kuwait",
+          "es": "Para obligar al ejército iraquí a salir de Kuwait"
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "What major event happened on September 11, 2001 in the United States?",
+        "es": "¿Qué acontecimiento importante ocurrió el 11 de septiembre de 2001 en los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Terrorists attacked the United States",
+          "es": "Terroristas atacaron a los Estados Unidos"
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "cat": "recent",
+      "dynamic": null,
+      "q": {
+        "en": "Name one U.S. military conflict after the September 11, 2001 attacks.",
+        "es": "Mencione un conflicto militar de Estados Unidos después de los ataques del 11 de septiembre de 2001."
+      },
+      "acceptable": [
+        {
+          "en": "Global War on Terror",
+          "es": "Guerra Global contra el Terrorismo"
+        },
+        {
+          "en": "War in Afghanistan",
+          "es": "Guerra de Afganistán"
+        },
+        {
+          "en": "War in Iraq",
+          "es": "Guerra de Irak"
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "Name one American Indian tribe in the United States.",
+        "es": "Mencione una tribu indígena estadounidense en los Estados Unidos."
+      },
+      "acceptable": [
+        {
+          "en": "Apache",
+          "es": "Apache"
+        },
+        {
+          "en": "Cherokee",
+          "es": "Cherokee"
+        },
+        {
+          "en": "Navajo",
+          "es": "Navajo"
+        },
+        {
+          "en": "Sioux",
+          "es": "Sioux"
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "Name one example of an American innovation.",
+        "es": "Mencione un ejemplo de una innovación estadounidense."
+      },
+      "acceptable": [
+        {
+          "en": "Light bulb",
+          "es": "Bombilla eléctrica"
+        },
+        {
+          "en": "automobile",
+          "es": "automóvil"
+        },
+        {
+          "en": "skyscrapers",
+          "es": "rascacielos"
+        },
+        {
+          "en": "airplane",
+          "es": "avión"
+        },
+        {
+          "en": "assembly line",
+          "es": "línea de ensamblaje"
+        },
+        {
+          "en": "landing on the Moon",
+          "es": "llegada a la Luna"
+        },
+        {
+          "en": "integrated circuit",
+          "es": "circuito integrado"
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "What is the capital of the United States?",
+        "es": "¿Cuál es la capital de los Estados Unidos?"
+      },
+      "acceptable": [
+        {
+          "en": "Washington, D.C.",
+          "es": "Washington, D.C."
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "Where is the Statue of Liberty?",
+        "es": "¿Dónde está la Estatua de la Libertad?"
+      },
+      "acceptable": [
+        {
+          "en": "New York Harbor",
+          "es": "Puerto de Nueva York"
+        },
+        {
+          "en": "Liberty Island",
+          "es": "Isla de la Libertad"
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "Why does the flag have 13 stripes?",
+        "es": "¿Por qué la bandera tiene 13 franjas?"
+      },
+      "acceptable": [
+        {
+          "en": "Because there were 13 original colonies",
+          "es": "Porque había 13 colonias originales"
+        },
+        {
+          "en": "the stripes represent the original colonies",
+          "es": "las franjas representan las colonias originales"
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "Why does the flag have 50 stars?",
+        "es": "¿Por qué la bandera tiene 50 estrellas?"
+      },
+      "acceptable": [
+        {
+          "en": "One star for each state",
+          "es": "Una estrella por cada estado"
+        },
+        {
+          "en": "each star represents a state",
+          "es": "cada estrella representa un estado"
+        },
+        {
+          "en": "there are 50 states",
+          "es": "hay 50 estados"
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "What is the name of the national anthem?",
+        "es": "¿Cuál es el nombre del himno nacional?"
+      },
+      "acceptable": [
+        {
+          "en": "The Star-Spangled Banner",
+          "es": "The Star-Spangled Banner"
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "The Nation’s first motto was “E Pluribus Unum.” What does that mean?",
+        "es": "El primer lema de la nación fue “E Pluribus Unum”. ¿Qué significa?"
+      },
+      "acceptable": [
+        {
+          "en": "Out of many, one",
+          "es": "De muchos, uno"
+        },
+        {
+          "en": "we all become one",
+          "es": "todos nos convertimos en uno"
+        }
+      ]
+    },
+    {
+      "id": 125,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "What is Independence Day?",
+        "es": "¿Qué es el Día de la Independencia?"
+      },
+      "acceptable": [
+        {
+          "en": "A holiday celebrating U.S. independence from Britain",
+          "es": "Un día festivo que celebra la independencia de Estados Unidos de Gran Bretaña"
+        },
+        {
+          "en": "the country's birthday",
+          "es": "el cumpleaños del país"
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "Name three national U.S. holidays.",
+        "es": "Mencione tres días festivos nacionales de los Estados Unidos."
+      },
+      "acceptable": [
+        {
+          "en": "New Year’s Day",
+          "es": "Día de Año Nuevo"
+        },
+        {
+          "en": "Martin Luther King Jr. Day",
+          "es": "Día de Martin Luther King Jr"
+        },
+        {
+          "en": "Presidents Day",
+          "es": "Día de los Presidentes"
+        },
+        {
+          "en": "Memorial Day",
+          "es": "Día de los Caídos"
+        },
+        {
+          "en": "Juneteenth",
+          "es": "Juneteenth"
+        },
+        {
+          "en": "Independence Day",
+          "es": "Día de la Independencia"
+        },
+        {
+          "en": "Labor Day",
+          "es": "Día del Trabajo"
+        },
+        {
+          "en": "Columbus Day",
+          "es": "Día de Colón"
+        },
+        {
+          "en": "Veterans Day",
+          "es": "Día de los Veteranos"
+        },
+        {
+          "en": "Thanksgiving",
+          "es": "Día de Acción de Gracias"
+        },
+        {
+          "en": "Christmas",
+          "es": "Navidad"
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "What is Memorial Day?",
+        "es": "¿Qué es el Día de los Caídos (Memorial Day)?"
+      },
+      "acceptable": [
+        {
+          "en": "A holiday to honor soldiers who died in military service",
+          "es": "Un día festivo para honrar a los soldados que murieron mientras prestaban servicio militar"
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "cat": "symbols",
+      "dynamic": null,
+      "q": {
+        "en": "What is Veterans Day?",
+        "es": "¿Qué es el Día de los Veteranos?"
+      },
+      "acceptable": [
+        {
+          "en": "A holiday to honor people who have served in the U.S. military",
+          "es": "Un día festivo para honrar a las personas que sirven o han servido en las fuerzas armadas de Estados Unidos"
+        }
+      ]
+    }
+  ]
+}

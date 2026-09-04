@@ -1,0 +1,11 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*~
+
+# Node (only if you later add tooling; none required for this static site)
+node_modules/
+npm-debug.log*
+
+# Local scratch
+*.log

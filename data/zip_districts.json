@@ -1,0 +1,6 @@
+{
+  "_notes": "ZIP-code -> congressional-district suggestions for VA / NC / MD. Format: { stateKey: { \"ZIP\": districtNumber } }. Intentionally EMPTY for now: VA/NC/MD all changed congressional maps recently (NC redrew for 2026), so a stale crosswalk would suggest wrong districts on a study test. When you choose a verified, current data source (e.g. the U.S. Census 119th-Congress ZCTA-to-CD relationship file), populate the per-state maps below. Until then the app cleanly falls back to the manual district picker, which guarantees the correct answer. ZIP -> district is not 1:1 (some ZIPs straddle districts); always let the user confirm/override.",
+  "virginia": {},
+  "north_carolina": {},
+  "maryland": {}
+}

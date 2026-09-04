@@ -1,0 +1,71 @@
+{
+  "_notes": "Covers Q23 (a U.S. senator), Q29 (U.S. representative), Q61 (governor), Q62 (state capital). Scope: Virginia, North Carolina, Maryland (D.C. dropped from scope). All three states now have full district-level representative data. Flow: ask test-taker's state first, then zip code; zip-to-district mapping is not perfectly 1:1 (some zips straddle two districts), so the app needs a zip-to-district reference table plus a fallback for ambiguous zips. Test-takers from states outside VA/NC/MD are blocked from state-specific questions for now. Last verified: Sept 4, 2026.",
+
+  "virginia": {
+    "state_capital": { "en": "Richmond", "es": "Richmond" },
+    "governor": { "en": "Abigail Spanberger (Democrat)", "es": "Abigail Spanberger (demócrata)", "note": "Sworn in January 17, 2026; first woman to serve as Virginia governor." },
+    "us_senators": [
+      { "en": "Mark Warner (Democrat)", "es": "Mark Warner (demócrata)" },
+      { "en": "Tim Kaine (Democrat)", "es": "Tim Kaine (demócrata)" }
+    ],
+    "us_representatives_by_district": {
+      "1": { "en": "Rob Wittman (Republican)", "es": "Rob Wittman (republicano)" },
+      "2": { "en": "Jen Kiggans (Republican)", "es": "Jen Kiggans (republicana)" },
+      "3": { "en": "Bobby Scott (Democrat)", "es": "Bobby Scott (demócrata)" },
+      "4": { "en": "Jennifer McClellan (Democrat)", "es": "Jennifer McClellan (demócrata)" },
+      "5": { "en": "John McGuire (Republican)", "es": "John McGuire (republicano)" },
+      "6": { "en": "Ben Cline (Republican)", "es": "Ben Cline (republicano)" },
+      "7": { "en": "Eugene Vindman (Democrat)", "es": "Eugene Vindman (demócrata)" },
+      "8": { "en": "Don Beyer (Democrat)", "es": "Don Beyer (demócrata)" },
+      "9": { "en": "Morgan Griffith (Republican)", "es": "Morgan Griffith (republicano)" },
+      "10": { "en": "Suhas Subramanyam (Democrat)", "es": "Suhas Subramanyam (demócrata)" },
+      "11": { "en": "James Walkinshaw (Democrat)", "es": "James Walkinshaw (demócrata)", "note": "Took office Sept 9, 2025 via special election, succeeding Gerry Connolly." }
+    },
+    "district_lookup_note": "Decided: zip-code lookup. Zip-to-district mapping is not perfectly 1:1 (some zips straddle two districts), so the app needs a zip-to-district reference table (e.g. from the Census Bureau or a congressional district API) plus a fallback for ambiguous zips — show the most likely district and let the user confirm or manually pick from 1-11 if unsure."
+  },
+
+  "north_carolina": {
+    "state_capital": { "en": "Raleigh", "es": "Raleigh" },
+    "governor": { "en": "Josh Stein (Democrat)", "es": "Josh Stein (demócrata)" },
+    "us_senators": [
+      { "en": "Thom Tillis (Republican)", "es": "Thom Tillis (republicano)", "note": "Announced he will not seek re-election in 2026, but remains the sitting senator." },
+      { "en": "Ted Budd (Republican)", "es": "Ted Budd (republicano)" }
+    ],
+    "us_representatives_by_district": {
+      "1": { "en": "Don Davis (Democrat)", "es": "Don Davis (demócrata)" },
+      "2": { "en": "Deborah Ross (Democrat)", "es": "Deborah Ross (demócrata)" },
+      "3": { "en": "Greg Murphy (Republican)", "es": "Greg Murphy (republicano)" },
+      "4": { "en": "Valerie Foushee (Democrat)", "es": "Valerie Foushee (demócrata)" },
+      "5": { "en": "Virginia Foxx (Republican)", "es": "Virginia Foxx (republicana)" },
+      "6": { "en": "Addison McDowell (Republican)", "es": "Addison McDowell (republicano)" },
+      "7": { "en": "David Rouzer (Republican)", "es": "David Rouzer (republicano)" },
+      "8": { "en": "Mark Harris (Republican)", "es": "Mark Harris (republicano)" },
+      "9": { "en": "Richard Hudson (Republican)", "es": "Richard Hudson (republicano)" },
+      "10": { "en": "Pat Harrigan (Republican)", "es": "Pat Harrigan (republicano)" },
+      "11": { "en": "Chuck Edwards (Republican)", "es": "Chuck Edwards (republicano)" },
+      "12": { "en": "Alma Adams (Democrat)", "es": "Alma Adams (demócrata)" },
+      "13": { "en": "Brad Knott (Republican)", "es": "Brad Knott (republicano)" },
+      "14": { "en": "Tim Moore (Republican)", "es": "Tim Moore (republicano)" }
+    },
+    "district_lookup_note": "NC redrew its congressional map for the 2026 elections (approved Oct 21-22, 2025), affecting districts 1 and 3 specifically, but current officeholders (elected 2024, serving through Jan 2027) remain as listed above until then."
+  },
+
+  "maryland": {
+    "state_capital": { "en": "Annapolis", "es": "Annapolis" },
+    "governor": { "en": "Wes Moore (Democrat)", "es": "Wes Moore (demócrata)" },
+    "us_senators": [
+      { "en": "Chris Van Hollen (Democrat)", "es": "Chris Van Hollen (demócrata)" },
+      { "en": "Angela Alsobrooks (Democrat)", "es": "Angela Alsobrooks (demócrata)" }
+    ],
+    "us_representatives_by_district": {
+      "1": { "en": "Andy Harris (Republican)", "es": "Andy Harris (republicano)" },
+      "2": { "en": "Johnny Olszewski (Democrat)", "es": "Johnny Olszewski (demócrata)" },
+      "3": { "en": "Sarah Elfreth (Democrat)", "es": "Sarah Elfreth (demócrata)" },
+      "4": { "en": "Glenn Ivey (Democrat)", "es": "Glenn Ivey (demócrata)" },
+      "5": { "en": "Steny Hoyer (Democrat)", "es": "Steny Hoyer (demócrata)" },
+      "6": { "en": "April McClain Delaney (Democrat)", "es": "April McClain Delaney (demócrata)" },
+      "7": { "en": "Kweisi Mfume (Democrat)", "es": "Kweisi Mfume (demócrata)" },
+      "8": { "en": "Jamie Raskin (Democrat)", "es": "Jamie Raskin (demócrata)" }
+    }
+  }
+}

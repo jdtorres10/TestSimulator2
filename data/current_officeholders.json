@@ -1,0 +1,37 @@
+{
+  "_notes": "Nationwide answers — same for every test-taker regardless of state. Verify and update whenever an office changes hands. Last verified: Aug 27, 2026.",
+  "questions": {
+    "q30_speaker_of_the_house": {
+      "en_question": "What is the name of the Speaker of the House of Representatives now?",
+      "es_question": "¿Cuál es el nombre del Presidente de la Cámara de Representantes actualmente?",
+      "answer_en": "Mike Johnson",
+      "answer_es": "Mike Johnson",
+      "source_note": "Speaker since October 25, 2023; re-elected Jan 3, 2025 for the 119th Congress.",
+      "last_verified": "2026-08-27"
+    },
+    "q38_president": {
+      "en_question": "What is the name of the President of the United States now?",
+      "es_question": "¿Cuál es el nombre del Presidente de los Estados Unidos actualmente?",
+      "answer_en": "Donald J. Trump",
+      "answer_es": "Donald J. Trump",
+      "source_note": "Inaugurated January 20, 2025 (47th President).",
+      "last_verified": "2026-08-27"
+    },
+    "q39_vice_president": {
+      "en_question": "What is the name of the Vice President of the United States now?",
+      "es_question": "¿Cuál es el nombre del Vicepresidente de los Estados Unidos actualmente?",
+      "answer_en": "JD Vance",
+      "answer_es": "JD Vance",
+      "source_note": "Inaugurated January 20, 2025 (50th Vice President).",
+      "last_verified": "2026-08-27"
+    },
+    "q57_chief_justice": {
+      "en_question": "Who is the Chief Justice of the United States now?",
+      "es_question": "¿Quién es el Presidente de la Corte Suprema de los Estados Unidos actualmente?",
+      "answer_en": "John Roberts (John G. Roberts, Jr.)",
+      "answer_es": "John Roberts (John G. Roberts, Jr.)",
+      "source_note": "Chief Justice since September 29, 2005. No change expected — Supreme Court seats have no term limit.",
+      "last_verified": "2026-08-27"
+    }
+  }
+}
