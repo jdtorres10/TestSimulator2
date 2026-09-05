@@ -162,27 +162,50 @@
 
   // ---- Build a render-ready question ----
   function optionObj(pair) { var showAlt = (lang === "es"); return { en: pair.en, es: pair.es, text: pair[lang], alt: (showAlt && pair.en !== pair.es) ? pair.en : null }; }
+  // How many answers the stem asks for ("Name two...", "What are three...") -> N; else 1.
+  var COUNT_WORDS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6 };
+  function parseCount(stemEn) {
+    var m = String(stemEn).toLowerCase().match(/(?:name|mention|give|describe|list|what are(?: the)?)\s+(one|two|three|four|five|six)\b/);
+    return m ? COUNT_WORDS[m[1]] : 1;
+  }
+  function combineGroup(items) {
+    return { en: items.map(function (x) { return x.en; }).join("; "), es: items.map(function (x) { return x.es; }).join("; ") };
+  }
+  // Distinct same-category wrong answers (excluding this question's acceptable answers).
+  function distractorPool(q) {
+    var exclude = {}; q.acceptable.forEach(function (a) { exclude[a.en.toLowerCase()] = true; });
+    var seen = {}, pool = [];
+    (DATA.poolByCat[q.cat] || []).forEach(function (p) {
+      var k = p.en.toLowerCase();
+      if (p.qid === q.id || exclude[k] || seen[k]) return;
+      seen[k] = true; pool.push({ en: p.en, es: p.es });
+    });
+    return pool;
+  }
+
   function buildQuestion(id, sess) {
     var q = DATA.byId[id];
     var showAlt = (lang === "es");
-    var studyMode = sess && (sess.mode === "category" || sess.mode === "missed");
-    // Study modes: for "name one of N" questions, show only real acceptable answers —
-    // every option is correct, so a new student sees the actual answers, not distractors.
-    // The graded full exam keeps 1 correct + distractors below, so it stays a real test.
-    if (!q.dynamic && q.acceptable.length >= 2 && studyMode) {
-      var picks = sample(q.acceptable, Math.min(4, q.acceptable.length)).map(optionObj);
-      return {
-        id: id, cat: q.cat, dynamic: null,
-        prompt: q.q[lang], promptAlt: showAlt ? q.q.en : null,
-        options: picks, answer: -1, allCorrect: true,
-        correctText: null, correctAlt: null, acceptableAll: q.acceptable
-      };
+    var correct, opts;
+    if (q.dynamic) {
+      var r = resolveDynamic(q, sess); correct = r.correct;
+      opts = [correct].concat(sample(r.distractors, 3)).map(optionObj);
+    } else {
+      var n = parseCount(q.q.en);
+      if (n >= 2 && q.acceptable.length >= 2) {
+        // "Name N" question: correct option bundles N acceptable answers;
+        // each distractor option bundles N wrong answers from the same category.
+        var groupN = Math.min(n, q.acceptable.length);
+        correct = combineGroup(sample(q.acceptable, groupN));
+        var pool = shuffle(distractorPool(q));
+        var groups = [];
+        for (var g = 0; g < 3 && pool.length; g++) { groups.push(combineGroup(pool.splice(0, Math.min(groupN, pool.length)))); }
+        opts = [correct].concat(groups).map(optionObj);
+      } else {
+        correct = pick(q.acceptable);
+        opts = [correct].concat(sample(autoDistractors(q), 3)).map(optionObj);
+      }
     }
-    var correct, distractors;
-    if (q.dynamic) { var r = resolveDynamic(q, sess); correct = r.correct; distractors = r.distractors; }
-    else { correct = pick(q.acceptable); distractors = autoDistractors(q); }
-    // assemble 4 options
-    var opts = [correct].concat(sample(distractors, 3)).map(optionObj);
     opts = shuffle(opts);
     var answer = 0; for (var i = 0; i < opts.length; i++) { if (opts[i].en === correct.en) { answer = i; break; } }
     return {
