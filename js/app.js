@@ -165,6 +165,19 @@
   function buildQuestion(id, sess) {
     var q = DATA.byId[id];
     var showAlt = (lang === "es");
+    var studyMode = sess && (sess.mode === "category" || sess.mode === "missed");
+    // Study modes: for "name one of N" questions, show only real acceptable answers —
+    // every option is correct, so a new student sees the actual answers, not distractors.
+    // The graded full exam keeps 1 correct + distractors below, so it stays a real test.
+    if (!q.dynamic && q.acceptable.length >= 2 && studyMode) {
+      var picks = sample(q.acceptable, Math.min(4, q.acceptable.length)).map(optionObj);
+      return {
+        id: id, cat: q.cat, dynamic: null,
+        prompt: q.q[lang], promptAlt: showAlt ? q.q.en : null,
+        options: picks, answer: -1, allCorrect: true,
+        correctText: null, correctAlt: null, acceptableAll: q.acceptable
+      };
+    }
     var correct, distractors;
     if (q.dynamic) { var r = resolveDynamic(q, sess); correct = r.correct; distractors = r.distractors; }
     else { correct = pick(q.acceptable); distractors = autoDistractors(q); }
@@ -175,9 +188,9 @@
     return {
       id: id, cat: q.cat, dynamic: q.dynamic,
       prompt: q.q[lang], promptAlt: showAlt ? q.q.en : null,
-      options: opts, answer: answer,
+      options: opts, answer: answer, allCorrect: false,
       correctText: correct[lang], correctAlt: showAlt ? correct.en : null,
-      acceptableAll: q.acceptable // for optional "also accepted" display
+      acceptableAll: q.acceptable // for the "all acceptable answers" display
     };
   }
 
@@ -404,8 +417,10 @@
   function feedbackBlock(correct, q) {
     var fb = el("div", "feedback " + (correct ? "ok" : "no"));
     var v = el("div", "verdict"); v.appendChild(document.createTextNode((correct ? "✓ " : "✕ ") + (correct ? t("correct") : t("incorrect")))); fb.appendChild(v);
-    var off = el("div", "official"); off.appendChild(el("b", null, t("correctAnswer") + ": ")); off.appendChild(document.createTextNode(q.correctText)); fb.appendChild(off);
-    if (q.correctAlt) fb.appendChild(el("div", "official alt-en", q.correctAlt));
+    if (q.correctText) {
+      var off = el("div", "official"); off.appendChild(el("b", null, t("correctAnswer") + ": ")); off.appendChild(document.createTextNode(q.correctText)); fb.appendChild(off);
+      if (q.correctAlt) fb.appendChild(el("div", "official alt-en", q.correctAlt));
+    }
     // For questions with several acceptable answers, list them all (study aid).
     if (q.acceptableAll && q.acceptableAll.length > 1) {
       var all = el("div", "official all-acc");
@@ -441,8 +456,12 @@
       var body = el("div", "opt-body"); body.appendChild(el("span", null, opt.text)); if (opt.alt) body.appendChild(el("span", "alt-en", opt.alt)); b.appendChild(body);
       b.onclick = function () {
         if (answered) return; answered = true;
-        var correct = (i === q.answer);
-        Array.prototype.forEach.call(opts.children, function (child, ci) { child.disabled = true; if (ci === q.answer) child.classList.add("correct"); if (ci === i && !correct) child.classList.add("wrong"); });
+        var correct = q.allCorrect ? true : (i === q.answer);
+        Array.prototype.forEach.call(opts.children, function (child, ci) {
+          child.disabled = true;
+          if (q.allCorrect) { child.classList.add("correct"); }              // every shown option is a valid answer
+          else { if (ci === q.answer) child.classList.add("correct"); if (ci === i && !correct) child.classList.add("wrong"); }
+        });
         recordAnswer(q, correct, i);
         card.appendChild(feedbackBlock(correct, q));
         advanceControls(card);
