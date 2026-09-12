@@ -239,3 +239,63 @@ select {
 .hidden { display: none !important; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+
+/* ============ PLATFORM SHELL ============ */
+:root { --maxw: 1220px; }
+
+.location-bar { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:16px; padding:10px 12px; background:var(--surface); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow); font-size:0.85rem; }
+.loc-label { color:var(--muted); font-weight:600; }
+.location-bar .chip { padding:6px 12px; font-size:0.85rem; }
+.location-bar .zip-input { width:100px; }
+.location-bar .district-select { max-width:160px; padding:6px 10px; }
+
+.tabbar { display:flex; gap:4px; margin-top:16px; border-bottom:2px solid var(--line); overflow-x:auto; }
+.tab { border:0; background:transparent; color:var(--muted); font:inherit; font-weight:600; font-size:0.95rem; padding:11px 16px; cursor:pointer; border-bottom:3px solid transparent; margin-bottom:-2px; white-space:nowrap; }
+.tab.on { color:var(--navy); border-bottom-color:var(--red); }
+.tab-ico { margin-right:2px; }
+
+.cols { display:flex; gap:16px; align-items:flex-start; margin-top:18px; }
+.panel { flex:1 1 0; min-width:0; }
+.panel-head { margin-bottom:6px; }
+.panel-title { font-size:1.15rem; font-weight:800; color:var(--navy); letter-spacing:-0.01em; }
+
+@media (min-width:980px) {
+  .tabbar { display:none; }
+  .panel { max-height: calc(100vh - 140px); overflow-y:auto; padding-right:4px; }
+}
+@media (max-width:979px) {
+  .cols { display:block; margin-top:12px; }
+  .panel { display:none; }
+  .cols[data-active="vocab"] #vocab-panel,
+  .cols[data-active="flash"] #flash-panel,
+  .cols[data-active="test"] #test-panel { display:block; }
+}
+
+/* ---- Vocabulary ---- */
+.seg { display:inline-flex; gap:4px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:3px; margin:10px 0 14px; }
+.seg-btn { border:0; background:transparent; color:var(--muted); font:inherit; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:8px; cursor:pointer; }
+.seg-btn.on { background:var(--surface); color:var(--navy); box-shadow:var(--shadow); }
+.vocab-grid { display:grid; grid-template-columns:1fr; gap:10px; }
+.vocab-cat { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
+.vocab-cat-name { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--navy); font-weight:700; margin-bottom:8px; }
+.vocab-chips { display:flex; flex-wrap:wrap; gap:6px; }
+.vocab-chip { display:inline-flex; align-items:center; gap:5px; border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:999px; padding:5px 11px; font:inherit; font-size:0.85rem; cursor:pointer; }
+.vocab-chip:hover { border-color:var(--navy-2); }
+.vocab-chip.speaking { border-color:var(--red); background:var(--red-bg); }
+.chip-spk { font-size:0.78rem; opacity:0.55; }
+
+/* ---- Flash cards ---- */
+.flash-ctrl { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:10px 0 14px; }
+.flash-ctrl select { padding:8px 10px; }
+.flash-count { margin-left:auto; color:var(--muted); font-size:0.85rem; font-variant-numeric:tabular-nums; }
+.btn.tiny.on { border-color:var(--red); color:var(--red); }
+.flash-card { background:var(--surface); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:20px; min-height:220px; display:flex; flex-direction:column; cursor:pointer; }
+.flash-card.flipped { border-color:var(--navy-2); }
+.flash-card-top { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; }
+.flash-badge { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--navy); font-weight:700; }
+.flash-en { font-size:1.2rem; font-weight:700; line-height:1.35; }
+.flash-es { font-size:0.95rem; color:var(--muted); margin-top:8px; line-height:1.4; }
+.flash-flip-hint { margin-top:auto; padding-top:16px; text-align:center; color:var(--muted); font-size:0.8rem; }
+.flash-nav { display:flex; justify-content:center; gap:10px; margin-top:14px; }
+
+.help.warn { color:var(--red); }

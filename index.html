@@ -3,40 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>U.S. Civics Test Simulator</title>
-  <meta name="description" content="Bilingual (English/Spanish) practice simulator for the 2025 USCIS citizenship civics test.">
+  <title>U.S. Citizenship Study Platform</title>
+  <meta name="description" content="Bilingual study platform for the 2025 USCIS naturalization test: vocabulary, flash cards, and a full test simulator.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <div class="header-row">
-        <div class="brand">
-          <span class="flag" aria-hidden="true">🇺🇸</span>
-          <div>
-            <h1 id="appTitle">U.S. Civics Test Simulator</h1>
-            <p id="tagline">Practice for the 2025 USCIS citizenship civics test</p>
-          </div>
+    <div class="wrap header-row">
+      <div class="brand">
+        <span class="flag" aria-hidden="true">🇺🇸</span>
+        <div>
+          <h1 id="appTitle">U.S. Citizenship Study Platform</h1>
+          <p id="tagline">Prepare for the 2025 USCIS naturalization test</p>
         </div>
-        <div class="lang-toggle" role="group" aria-label="Language">
-          <button id="langEn" type="button" aria-pressed="true">English</button>
-          <button id="langEs" type="button" aria-pressed="false">Español</button>
-        </div>
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="langEn" type="button" aria-pressed="true">English</button>
+        <button id="langEs" type="button" aria-pressed="false">Español</button>
       </div>
     </div>
   </header>
 
   <main class="wrap">
-    <div id="app" aria-live="polite"></div>
+    <div id="location-bar" class="location-bar"></div>
+    <div id="tabbar" class="tabbar" role="tablist"></div>
+    <div id="cols" class="cols" data-active="vocab">
+      <section id="vocab-panel" class="panel" aria-live="polite"></section>
+      <section id="flash-panel" class="panel" aria-live="polite"></section>
+      <section id="test-panel" class="panel" aria-live="polite"></section>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <p id="footerText"></p>
-    </div>
+    <div class="wrap"><p id="footerText"></p></div>
   </footer>
 
   <script src="js/i18n.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/vocab.js"></script>
+  <script src="js/flashcards.js"></script>
+  <script src="js/test.js"></script>
+  <script src="js/platform.js"></script>
 </body>
 </html>

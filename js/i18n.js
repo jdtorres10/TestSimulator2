@@ -1,11 +1,25 @@
 /* Bilingual UI strings for the USCIS Civics Test Simulator. */
 window.I18N = {
   en: {
-    appTitle: "U.S. Civics Test Simulator",
-    tagline: "Practice for the 2025 USCIS citizenship civics test",
+    appTitle: "U.S. Citizenship Study Platform",
+    tagline: "Prepare for the 2025 USCIS naturalization test",
     langLabel: "Language",
     english: "English",
     spanish: "Español",
+
+    tabVocab: "Vocabulary",
+    tabFlash: "Flash cards",
+    tabTest: "Test simulator",
+    vocabHelp: "Official USCIS reading and writing words, in English. Tap a word to hear it.",
+    allCategories: "All categories",
+    shuffle: "Shuffle",
+    answerLabel: "Answer",
+    tapToFlip: "Tap to reveal the answer",
+    tapFlipBack: "Tap to flip back",
+    prev: "Prev",
+    nextCard: "Next",
+    dynNeedDistrict: "Set your district in the bar above to see your representative.",
+    needLocation: "Set your state and district in the bar above to start.",
 
     chooseMode: "Choose how you want to practice",
     fullExam: "Full practice exam",
@@ -86,11 +100,25 @@ window.I18N = {
     footer: "Not affiliated with USCIS. For study practice only. Current-officeholder and state data last verified Aug 27, 2026."
   },
   es: {
-    appTitle: "Simulador del Examen de Educación Cívica",
-    tagline: "Practique para el examen cívico de ciudadanía de USCIS 2025",
+    appTitle: "Plataforma de Estudio para la Ciudadanía",
+    tagline: "Prepárese para el examen de naturalización de USCIS 2025",
     langLabel: "Idioma",
     english: "English",
     spanish: "Español",
+
+    tabVocab: "Vocabulario",
+    tabFlash: "Tarjetas",
+    tabTest: "Simulador de examen",
+    vocabHelp: "Palabras oficiales de lectura y escritura de USCIS, en inglés. Toque una palabra para escucharla.",
+    allCategories: "Todas las categorías",
+    shuffle: "Mezclar",
+    answerLabel: "Respuesta",
+    tapToFlip: "Toque para ver la respuesta",
+    tapFlipBack: "Toque para regresar",
+    prev: "Anterior",
+    nextCard: "Siguiente",
+    dynNeedDistrict: "Seleccione su distrito en la barra de arriba para ver su representante.",
+    needLocation: "Seleccione su estado y distrito en la barra de arriba para comenzar.",
 
     chooseMode: "Elija cómo desea practicar",
     fullExam: "Examen de práctica completo",

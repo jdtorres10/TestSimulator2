@@ -1,0 +1,266 @@
+{
+  "_notes": "USCIS Reading & Writing Vocabulary for the Naturalization Test (rev 08/08). English only, as USCIS provides. Extracted from the official PDFs.",
+  "reading": {
+    "label_en": "Reading list",
+    "label_es": "Lista de lectura",
+    "categories": [
+      {
+        "key": "people",
+        "en": "People",
+        "es": "Personas",
+        "words": [
+          "Abraham Lincoln",
+          "George Washington"
+        ]
+      },
+      {
+        "key": "civics",
+        "en": "Civics",
+        "es": "Cívica",
+        "words": [
+          "American flag",
+          "Bill of Rights",
+          "capital",
+          "citizen",
+          "city",
+          "Congress",
+          "country",
+          "Father of Our Country",
+          "government",
+          "President",
+          "right",
+          "Senators",
+          "state/states",
+          "White House"
+        ]
+      },
+      {
+        "key": "places",
+        "en": "Places",
+        "es": "Lugares",
+        "words": [
+          "America",
+          "United States",
+          "U.S."
+        ]
+      },
+      {
+        "key": "holidays",
+        "en": "Holidays",
+        "es": "Días festivos",
+        "words": [
+          "Presidents' Day",
+          "Memorial Day",
+          "Flag Day",
+          "Independence Day",
+          "Labor Day",
+          "Columbus Day",
+          "Thanksgiving"
+        ]
+      },
+      {
+        "key": "question_words",
+        "en": "Question words",
+        "es": "Palabras interrogativas",
+        "words": [
+          "How",
+          "What",
+          "When",
+          "Where",
+          "Who",
+          "Why"
+        ]
+      },
+      {
+        "key": "verbs",
+        "en": "Verbs",
+        "es": "Verbos",
+        "words": [
+          "can",
+          "come",
+          "do/does",
+          "elects",
+          "have/has",
+          "is/are/was/be",
+          "lives/lived",
+          "meet",
+          "name",
+          "pay",
+          "vote",
+          "want"
+        ]
+      },
+      {
+        "key": "other_function",
+        "en": "Other (function)",
+        "es": "Otras (función)",
+        "words": [
+          "a",
+          "for",
+          "here",
+          "in",
+          "of",
+          "on",
+          "the",
+          "to",
+          "we"
+        ]
+      },
+      {
+        "key": "other_content",
+        "en": "Other (content)",
+        "es": "Otras (contenido)",
+        "words": [
+          "colors",
+          "dollar bill",
+          "first",
+          "largest",
+          "many",
+          "most",
+          "north",
+          "one",
+          "people",
+          "second",
+          "south"
+        ]
+      }
+    ]
+  },
+  "writing": {
+    "label_en": "Writing list",
+    "label_es": "Lista de escritura",
+    "categories": [
+      {
+        "key": "people",
+        "en": "People",
+        "es": "Personas",
+        "words": [
+          "Adams",
+          "Lincoln",
+          "Washington"
+        ]
+      },
+      {
+        "key": "civics",
+        "en": "Civics",
+        "es": "Cívica",
+        "words": [
+          "American Indians",
+          "capital",
+          "citizens",
+          "Civil War",
+          "Congress",
+          "Father of Our Country",
+          "flag",
+          "free",
+          "freedom of speech",
+          "President",
+          "right",
+          "Senators",
+          "state/states",
+          "White House"
+        ]
+      },
+      {
+        "key": "places",
+        "en": "Places",
+        "es": "Lugares",
+        "words": [
+          "Alaska",
+          "California",
+          "Canada",
+          "Delaware",
+          "Mexico",
+          "New York City",
+          "United States",
+          "Washington",
+          "Washington, D.C."
+        ]
+      },
+      {
+        "key": "months",
+        "en": "Months",
+        "es": "Meses",
+        "words": [
+          "February",
+          "May",
+          "June",
+          "July",
+          "September",
+          "October",
+          "November"
+        ]
+      },
+      {
+        "key": "holidays",
+        "en": "Holidays",
+        "es": "Días festivos",
+        "words": [
+          "Presidents' Day",
+          "Memorial Day",
+          "Flag Day",
+          "Independence Day",
+          "Labor Day",
+          "Columbus Day",
+          "Thanksgiving"
+        ]
+      },
+      {
+        "key": "verbs",
+        "en": "Verbs",
+        "es": "Verbos",
+        "words": [
+          "can",
+          "come",
+          "elect",
+          "have/has",
+          "is/was/be",
+          "lives/lived",
+          "meets",
+          "pay",
+          "vote",
+          "want"
+        ]
+      },
+      {
+        "key": "other_function",
+        "en": "Other (function)",
+        "es": "Otras (función)",
+        "words": [
+          "and",
+          "during",
+          "for",
+          "here",
+          "in",
+          "of",
+          "on",
+          "the",
+          "to",
+          "we"
+        ]
+      },
+      {
+        "key": "other_content",
+        "en": "Other (content)",
+        "es": "Otras (contenido)",
+        "words": [
+          "blue",
+          "dollar bill",
+          "fifty/50",
+          "first",
+          "largest",
+          "most",
+          "north",
+          "one",
+          "one hundred/100",
+          "people",
+          "red",
+          "second",
+          "south",
+          "taxes",
+          "white"
+        ]
+      }
+    ]
+  }
+}
