@@ -5,10 +5,14 @@ window.FlashApp = (function () {
   "use strict";
   var C = window.CIV;
   var container = null;
-  var cat = "", shuffled = false, order = [], idx = 0, flipped = false;
+  var cat = "", shuffled = false, recordedOnly = false, order = [], idx = 0, flipped = false;
 
   function buildDeck() {
-    var ids = C.DATA.questions.filter(function (q) { return !cat || q.cat === cat; }).map(function (q) { return q.id; });
+    var ids = C.DATA.questions.filter(function (q) {
+      if (cat && q.cat !== cat) return false;
+      if (recordedOnly && !C.clipFor(q.id)) return false;
+      return true;
+    }).map(function (q) { return q.id; });
     ids.sort(function (a, b) { return a - b; });
     order = shuffled ? C.shuffle(ids) : ids;
     idx = 0; flipped = false;
@@ -18,6 +22,7 @@ window.FlashApp = (function () {
 
   function render() {
     if (!container) return;
+    C.cancelSpeech();
     if (!order.length) buildDeck();
     container.innerHTML = "";
 
@@ -41,9 +46,21 @@ window.FlashApp = (function () {
     shuf.onclick = function () { shuffled = !shuffled; buildDeck(); render(); };
     ctrl.appendChild(shuf);
 
-    var count = C.el("span", "flash-count", (idx + 1) + " / " + order.length);
+    var recN = Object.keys(C.DATA.audioById).length;
+    if (recN) {
+      var recBtn = C.el("button", "btn ghost tiny" + (recordedOnly ? " on" : ""), "🎙️ " + C.t("recordedOnly"));
+      recBtn.onclick = function () { recordedOnly = !recordedOnly; buildDeck(); render(); };
+      ctrl.appendChild(recBtn);
+    }
+
+    var count = C.el("span", "flash-count", order.length ? ((idx + 1) + " / " + order.length) : "0 / 0");
     ctrl.appendChild(count);
     container.appendChild(ctrl);
+
+    if (!order.length) {
+      container.appendChild(C.el("p", "help", C.t("emptyFlash")));
+      return;
+    }
 
     // card
     var q = C.DATA.byId[order[idx]];
@@ -52,11 +69,15 @@ window.FlashApp = (function () {
     card.onclick = function () { flipped = !flipped; render(); };
 
     var topRow = C.el("div", "flash-card-top");
-    topRow.appendChild(C.el("span", "flash-badge", flipped ? C.t("answerLabel") : (catObj ? (catObj[C.prefs.lang] || catObj.en) : "")));
-    if (C.TTS) {
-      var speakText = flipped ? joinLang(answerPairs(q), "en") : q.q.en;
-      topRow.appendChild(C.speakButton(speakText));
-    }
+    var badgeWrap = C.el("div", "flash-badge-wrap");
+    badgeWrap.appendChild(C.el("span", "flash-badge", flipped ? C.t("answerLabel") : (catObj ? (catObj[C.prefs.lang] || catObj.en) : "")));
+    var clip = C.clipFor(q.id);
+    var hasSide = clip && (flipped ? clip.a : clip.q);
+    if (hasSide) badgeWrap.appendChild(C.el("span", "flash-rec-tag", C.t("hasRecording")));
+    topRow.appendChild(badgeWrap);
+    var speakText = flipped ? joinLang(answerPairs(q), "en") : q.q.en;
+    var spk = C.clipButton(q.id, flipped ? "a" : "q", speakText);
+    if (spk) topRow.appendChild(spk);
     card.appendChild(topRow);
 
     if (!flipped) {

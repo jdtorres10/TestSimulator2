@@ -18,6 +18,10 @@ window.I18N = {
     tapFlipBack: "Tap to flip back",
     prev: "Prev",
     nextCard: "Next",
+    recordedOnly: "With recording",
+    hasRecording: "Recording",
+    playRecording: "Play recording (English)",
+    emptyFlash: "No cards match this filter.",
     dynNeedDistrict: "Set your district in the bar above to see your representative.",
     needLocation: "Set your state and district in the bar above to start.",
 
@@ -117,6 +121,10 @@ window.I18N = {
     tapFlipBack: "Toque para regresar",
     prev: "Anterior",
     nextCard: "Siguiente",
+    recordedOnly: "Con grabación",
+    hasRecording: "Grabación",
+    playRecording: "Reproducir grabación (inglés)",
+    emptyFlash: "Ninguna tarjeta coincide con este filtro.",
     dynNeedDistrict: "Seleccione su distrito en la barra de arriba para ver su representante.",
     needLocation: "Seleccione su estado y distrito en la barra de arriba para comenzar.",
 

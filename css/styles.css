@@ -180,6 +180,7 @@ select {
 .speak-btn:hover { background: var(--red-bg); }
 .speak-btn:active { transform: translateY(1px); }
 .speak-btn.speaking { border-color: var(--red); background: var(--red-bg); animation: speakpulse 1s ease-in-out infinite; }
+.speak-btn.rec { border-color: var(--navy); }
 @keyframes speakpulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.09); } }
 @media (prefers-reduced-motion: reduce) { .speak-btn.speaking { animation: none; } }
 
@@ -293,6 +294,8 @@ select {
 .flash-card.flipped { border-color:var(--navy-2); }
 .flash-card-top { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; }
 .flash-badge { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--navy); font-weight:700; }
+.flash-badge-wrap { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.flash-rec-tag { font-size:0.68rem; font-weight:700; letter-spacing:0.03em; text-transform:uppercase; color:var(--red); background:var(--red-bg); border:1px solid var(--red); border-radius:999px; padding:2px 8px; }
 .flash-en { font-size:1.2rem; font-weight:700; line-height:1.35; }
 .flash-es { font-size:0.95rem; color:var(--muted); margin-top:8px; line-height:1.4; }
 .flash-flip-hint { margin-top:auto; padding-top:16px; text-align:center; color:var(--muted); font-size:0.8rem; }

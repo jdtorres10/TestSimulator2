@@ -19,7 +19,7 @@ window.CIV = (function () {
   var GOVERNOR_EXTRA = ["Glenn Youngkin (Republican)", "Larry Hogan (Republican)", "Ralph Northam (Democrat)", "Pat McCrory (Republican)"];
 
   var prefs = { lang: "en", state: "virginia", zip: "", district: null };
-  var DATA = { questions: [], categories: [], byId: {}, poolByCat: {}, officeholders: null, stateLocal: null, vocab: null };
+  var DATA = { questions: [], categories: [], byId: {}, poolByCat: {}, officeholders: null, stateLocal: null, vocab: null, audioById: {} };
   var ZIPDB = {};
   var subs = [];
 
@@ -47,9 +47,10 @@ window.CIV = (function () {
   function setZip(z) { prefs.zip = z; savePrefs(); }
   function setDistrict(d) { prefs.district = d; savePrefs(); emit(); }
 
-  // ---- TTS: locked to Samantha when available, graceful fallback ----
+  // ---- TTS + recorded clips (Samantha-locked TTS as fallback) ----
   var TTS = ("speechSynthesis" in window) && ("SpeechSynthesisUtterance" in window);
   var speakBtnActive = null, currentUtterance = null, voicesReady = false;
+  var currentAudio = null, audioWatch = null;
   var GOOD_VOICE = /google|natural|enhanced|premium|neural|siri|ava|allison|samantha|karen|daniel|moira|tessa/i;
   function englishVoices() { return TTS ? (window.speechSynthesis.getVoices() || []).filter(function (v) { return /^en/i.test(v.lang); }) : []; }
   function pickVoice() {
@@ -59,7 +60,19 @@ window.CIV = (function () {
     var good = vs.filter(function (v) { return /^en[-_]US/i.test(v.lang) && GOOD_VOICE.test(v.name); })[0];
     return good || vs.filter(function (v) { return /^en[-_]US/i.test(v.lang); })[0] || vs[0];
   }
-  function cancelSpeech() { if (TTS) { try { window.speechSynthesis.cancel(); } catch (e) {} } currentUtterance = null; if (speakBtnActive) { speakBtnActive.classList.remove("speaking"); speakBtnActive = null; } }
+  function stopRecorded() {
+    if (audioWatch) { try { clearInterval(audioWatch); } catch (e) {} audioWatch = null; }
+    if (currentAudio) {
+      try { currentAudio.pause(); currentAudio.removeAttribute("src"); currentAudio.load(); } catch (e) {}
+      currentAudio = null;
+    }
+  }
+  function cancelSpeech() {
+    if (TTS) { try { window.speechSynthesis.cancel(); } catch (e) {} }
+    currentUtterance = null;
+    stopRecorded();
+    if (speakBtnActive) { speakBtnActive.classList.remove("speaking"); speakBtnActive = null; }
+  }
   function speak(text, btn) {
     if (!TTS || !text) return;
     if (speakBtnActive === btn) { cancelSpeech(); return; }
@@ -70,11 +83,68 @@ window.CIV = (function () {
     currentUtterance = u; speakBtnActive = btn || null; if (btn) btn.classList.add("speaking");
     try { window.speechSynthesis.speak(u); } catch (e) { cancelSpeech(); }
   }
-  // a small round speaker button wired to speak English `text`
+  function clipFor(id) { return DATA.audioById[id] || null; }
+  function playRange(url, start, end, btn) {
+    if (speakBtnActive === btn) { cancelSpeech(); return; }
+    cancelSpeech();
+    var a = new Audio(url);
+    a.preload = "auto";
+    currentAudio = a;
+    speakBtnActive = btn || null;
+    if (btn) btn.classList.add("speaking");
+    function done() {
+      if (audioWatch) { try { clearInterval(audioWatch); } catch (e) {} audioWatch = null; }
+      if (currentAudio === a) {
+        try { a.pause(); } catch (e) {}
+        currentAudio = null;
+      }
+      if (speakBtnActive === btn) {
+        if (btn) btn.classList.remove("speaking");
+        speakBtnActive = null;
+      }
+    }
+    function doPlay() {
+      var p = a.play();
+      if (p && p.catch) p.catch(function () { done(); });
+    }
+    function seekAndPlay() {
+      var from = start || 0;
+      if (from <= 0.02) { doPlay(); return; }
+      function onSeek() { a.removeEventListener("seeked", onSeek); doPlay(); }
+      a.addEventListener("seeked", onSeek);
+      try { a.currentTime = from; } catch (e) { doPlay(); }
+    }
+    a.addEventListener("ended", done);
+    a.addEventListener("error", done);
+    if (end != null) {
+      audioWatch = setInterval(function () {
+        if (!currentAudio || currentAudio !== a) { done(); return; }
+        if (a.currentTime >= end - 0.04) done();
+      }, 40);
+    }
+    if (a.readyState >= 1) seekAndPlay();
+    else a.addEventListener("loadedmetadata", seekAndPlay);
+  }
+  // side is "q" (front) or "a" (back). Falls back to TTS when there is no clip for that side.
+  function playClip(id, side, btn, fallbackText) {
+    var clip = clipFor(id);
+    if (clip && side === "q" && clip.q) { playRange(clip.file, clip.q[0], clip.q[1], btn); return; }
+    if (clip && side === "a" && clip.a) { playRange(clip.file, clip.a[0], clip.a[1], btn); return; }
+    speak(fallbackText, btn);
+  }
   function speakButton(text) {
     var b = el("button", "speak-btn", "🔊"); b.type = "button";
     b.setAttribute("aria-label", t("readAloud")); b.title = t("readAloud");
     b.onclick = function (e) { e.stopPropagation(); speak(text, b); };
+    return b;
+  }
+  function clipButton(id, side, fallbackText) {
+    var clip = clipFor(id);
+    var hasRec = clip && ((side === "q" && clip.q) || (side === "a" && clip.a));
+    if (!hasRec && !TTS) return null;
+    var b = el("button", "speak-btn" + (hasRec ? " rec" : ""), "🔊"); b.type = "button";
+    b.setAttribute("aria-label", t("readAloud")); b.title = hasRec ? t("playRecording") : t("readAloud");
+    b.onclick = function (e) { e.stopPropagation(); playClip(id, side, b, fallbackText); };
     return b;
   }
 
@@ -155,11 +225,14 @@ window.CIV = (function () {
       fetch("data/current_officeholders.json").then(function (r) { return r.json(); }),
       fetch("data/state_local_lookup.json").then(function (r) { return r.json(); }),
       fetch("data/zip_districts.json").then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }),
-      fetch("data/vocab.json").then(function (r) { return r.json(); })
+      fetch("data/vocab.json").then(function (r) { return r.json(); }),
+      fetch("data/audio_manifest.json").then(function (r) { return r.ok ? r.json() : { clips: [] }; }).catch(function () { return { clips: [] }; })
     ]).then(function (res) {
       DATA.questions = res[0].questions; DATA.categories = res[0].categories;
       DATA.questions.forEach(function (q) { DATA.byId[q.id] = q; });
       DATA.officeholders = res[1]; DATA.stateLocal = res[2]; ZIPDB = res[3] || {}; DATA.vocab = res[4];
+      DATA.audioById = {};
+      (res[5].clips || []).forEach(function (c) { DATA.audioById[c.id] = c; });
       buildPoolByCat();
       done();
     }).catch(function (err) { done(err); });
@@ -172,6 +245,7 @@ window.CIV = (function () {
     getMissed: getMissed, addMissed: addMissed, removeMissed: removeMissed,
     on: on, emit: emit, setLang: setLang, setState: setState, setZip: setZip, setDistrict: setDistrict,
     TTS: TTS, speak: speak, cancelSpeech: cancelSpeech, speakButton: speakButton,
+    clipFor: clipFor, playClip: playClip, clipButton: clipButton,
     stateByKey: stateByKey, districtCount: districtCount, resolveZip: resolveZip,
     resolveDynamic: resolveDynamic, dynamicAnswers: dynamicAnswers,
     load: load, lang: function () { return prefs.lang; }

@@ -1,0 +1,1132 @@
+{
+  "_meta": {
+    "source": "VoiceRecordings/Questions PoC Q1-Q60",
+    "notes": "q/a are [start,end] seconds in the same file. questionOnly clips play the whole file on the question side; answer side falls back to TTS. Recorded answers may be a single easy phrasing; flash-card text still lists all acceptable answers."
+  },
+  "clips": [
+    {
+      "id": 1,
+      "file": "VoiceRecordings/Questions/Q1.m4a",
+      "duration": 6.037,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.864
+      ],
+      "a": [
+        4.824,
+        6.037
+      ],
+      "pause": {
+        "start": 3.784,
+        "end": 4.874,
+        "dur": 1.091
+      }
+    },
+    {
+      "id": 2,
+      "file": "VoiceRecordings/Questions/Q2.m4a",
+      "duration": 6.464,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.021
+      ],
+      "a": [
+        4.469,
+        6.464
+      ],
+      "pause": {
+        "start": 2.941,
+        "end": 4.519,
+        "dur": 1.578
+      }
+    },
+    {
+      "id": 3,
+      "file": "VoiceRecordings/Questions/Q3.m4a",
+      "duration": 7.659,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.894
+      ],
+      "a": [
+        5.219,
+        7.659
+      ],
+      "pause": {
+        "start": 3.814,
+        "end": 5.269,
+        "dur": 1.456
+      }
+    },
+    {
+      "id": 4,
+      "file": "VoiceRecordings/Questions/Q4.m4a",
+      "duration": 10.219,
+      "questionOnly": false,
+      "q": [
+        0,
+        7.02
+      ],
+      "a": [
+        8.42,
+        10.219
+      ],
+      "pause": {
+        "start": 6.98,
+        "end": 8.47,
+        "dur": 1.49
+      }
+    },
+    {
+      "id": 5,
+      "file": "VoiceRecordings/Questions/Q5.m4a",
+      "duration": 5.696,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.429
+      ],
+      "a": [
+        4.396,
+        5.696
+      ],
+      "pause": {
+        "start": 3.349,
+        "end": 4.446,
+        "dur": 1.097
+      }
+    },
+    {
+      "id": 6,
+      "file": "VoiceRecordings/Questions/Q6.m4a",
+      "duration": 5.867,
+      "questionOnly": false,
+      "q": [
+        0,
+        2.446
+      ],
+      "a": [
+        3.461,
+        5.867
+      ],
+      "pause": {
+        "start": 2.366,
+        "end": 3.511,
+        "dur": 1.145
+      }
+    },
+    {
+      "id": 7,
+      "file": "VoiceRecordings/Questions/Q7.m4a",
+      "duration": 5.867,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.401
+      ],
+      "a": [
+        4.4,
+        5.867
+      ],
+      "pause": {
+        "start": 3.321,
+        "end": 4.45,
+        "dur": 1.129
+      }
+    },
+    {
+      "id": 8,
+      "file": "VoiceRecordings/Questions/Q8.m4a",
+      "duration": 8.0,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.331
+      ],
+      "a": [
+        4.537,
+        8.0
+      ],
+      "pause": {
+        "start": 3.251,
+        "end": 4.587,
+        "dur": 1.336
+      }
+    },
+    {
+      "id": 9,
+      "file": "VoiceRecordings/Questions/Q9.m4a",
+      "duration": 8.0,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.819
+      ],
+      "a": [
+        5.784,
+        8.0
+      ],
+      "pause": {
+        "start": 4.739,
+        "end": 5.834,
+        "dur": 1.095
+      }
+    },
+    {
+      "id": 10,
+      "file": "VoiceRecordings/Questions/Q10.m4a",
+      "duration": 9.963,
+      "questionOnly": false,
+      "q": [
+        0,
+        6.369
+      ],
+      "a": [
+        7.573,
+        9.963
+      ],
+      "pause": {
+        "start": 6.289,
+        "end": 7.623,
+        "dur": 1.335
+      }
+    },
+    {
+      "id": 11,
+      "file": "VoiceRecordings/Questions/Q11.m4a",
+      "duration": 8.853,
+      "questionOnly": false,
+      "q": [
+        0,
+        5.567
+      ],
+      "a": [
+        6.723,
+        8.853
+      ],
+      "pause": {
+        "start": 5.487,
+        "end": 6.773,
+        "dur": 1.286
+      }
+    },
+    {
+      "id": 12,
+      "file": "VoiceRecordings/Questions/Q12.m4a",
+      "duration": 7.061,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.525
+      ],
+      "a": [
+        5.399,
+        7.061
+      ],
+      "pause": {
+        "start": 4.445,
+        "end": 5.449,
+        "dur": 1.004
+      }
+    },
+    {
+      "id": 13,
+      "file": "VoiceRecordings/Questions/Q13.m4a",
+      "duration": 5.525,
+      "questionOnly": false,
+      "q": [
+        0,
+        2.323
+      ],
+      "a": [
+        3.263,
+        5.525
+      ],
+      "pause": {
+        "start": 2.243,
+        "end": 3.313,
+        "dur": 1.07
+      }
+    },
+    {
+      "id": 14,
+      "file": "VoiceRecordings/Questions/Q14.m4a",
+      "duration": 7.488,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.52
+      ],
+      "a": [
+        5.62,
+        7.488
+      ],
+      "pause": {
+        "start": 4.49,
+        "end": 5.65,
+        "dur": 1.16
+      }
+    },
+    {
+      "id": 15,
+      "file": "VoiceRecordings/Questions/Q15.m4a",
+      "duration": 6.464,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.51
+      ],
+      "a": [
+        4.583,
+        6.464
+      ],
+      "pause": {
+        "start": 3.43,
+        "end": 4.633,
+        "dur": 1.203
+      }
+    },
+    {
+      "id": 16,
+      "file": "VoiceRecordings/Questions/Q16.m4a",
+      "duration": 8.853,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.053
+      ],
+      "a": [
+        4.065,
+        8.853
+      ],
+      "pause": {
+        "start": 2.973,
+        "end": 4.115,
+        "dur": 1.143
+      }
+    },
+    {
+      "id": 17,
+      "file": "VoiceRecordings/Questions/Q17.m4a",
+      "duration": 7.659,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.8
+      ],
+      "a": [
+        5.911,
+        7.659
+      ],
+      "pause": {
+        "start": 4.72,
+        "end": 5.961,
+        "dur": 1.242
+      }
+    },
+    {
+      "id": 18,
+      "file": "VoiceRecordings/Questions/Q18.m4a",
+      "duration": 6.379,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.536
+      ],
+      "a": [
+        4.709,
+        6.379
+      ],
+      "pause": {
+        "start": 3.456,
+        "end": 4.759,
+        "dur": 1.303
+      }
+    },
+    {
+      "id": 19,
+      "file": "VoiceRecordings/Questions/Q19.m4a",
+      "duration": 7.829,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.841
+      ],
+      "a": [
+        4.835,
+        7.829
+      ],
+      "pause": {
+        "start": 3.761,
+        "end": 4.885,
+        "dur": 1.124
+      }
+    },
+    {
+      "id": 20,
+      "file": "VoiceRecordings/Questions/Q20.m4a",
+      "duration": 6.464,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.479
+      ],
+      "a": [
+        4.637,
+        6.464
+      ],
+      "pause": {
+        "start": 3.399,
+        "end": 4.687,
+        "dur": 1.288
+      }
+    },
+    {
+      "id": 21,
+      "file": "VoiceRecordings/Questions/Q21.m4a",
+      "duration": 4.501,
+      "questionOnly": false,
+      "q": [
+        0,
+        2.534
+      ],
+      "a": [
+        3.205,
+        4.501
+      ],
+      "pause": {
+        "start": 2.454,
+        "end": 3.255,
+        "dur": 0.801
+      }
+    },
+    {
+      "id": 22,
+      "file": "VoiceRecordings/Questions/Q22.m4a",
+      "duration": 6.208,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.628
+      ],
+      "a": [
+        4.627,
+        6.208
+      ],
+      "pause": {
+        "start": 3.548,
+        "end": 4.677,
+        "dur": 1.129
+      }
+    },
+    {
+      "id": 23,
+      "file": "VoiceRecordings/Questions/Q23-NA.m4a",
+      "duration": 4.672,
+      "questionOnly": true,
+      "q": [
+        0,
+        4.672
+      ],
+      "a": null
+    },
+    {
+      "id": 24,
+      "file": "VoiceRecordings/Questions/Q24.m4a",
+      "duration": 8.427,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.635
+      ],
+      "a": [
+        5.868,
+        8.427
+      ],
+      "pause": {
+        "start": 4.555,
+        "end": 5.918,
+        "dur": 1.364
+      }
+    },
+    {
+      "id": 25,
+      "file": "VoiceRecordings/Questions/Q25.m4a",
+      "duration": 7.744,
+      "questionOnly": false,
+      "q": [
+        0,
+        5.225
+      ],
+      "a": [
+        6.09,
+        7.744
+      ],
+      "pause": {
+        "start": 5.145,
+        "end": 6.14,
+        "dur": 0.995
+      }
+    },
+    {
+      "id": 26,
+      "file": "VoiceRecordings/Questions/Q26.m4a",
+      "duration": 10.048,
+      "questionOnly": false,
+      "q": [
+        0,
+        5.667
+      ],
+      "a": [
+        6.938,
+        10.048
+      ],
+      "pause": {
+        "start": 5.587,
+        "end": 6.988,
+        "dur": 1.401
+      }
+    },
+    {
+      "id": 27,
+      "file": "VoiceRecordings/Questions/Q27.m4a",
+      "duration": 5.184,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.162
+      ],
+      "a": [
+        3.993,
+        5.184
+      ],
+      "pause": {
+        "start": 3.082,
+        "end": 4.043,
+        "dur": 0.961
+      }
+    },
+    {
+      "id": 28,
+      "file": "VoiceRecordings/Questions/Q28.m4a",
+      "duration": 6.208,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.405
+      ],
+      "a": [
+        4.252,
+        6.208
+      ],
+      "pause": {
+        "start": 3.325,
+        "end": 4.302,
+        "dur": 0.977
+      }
+    },
+    {
+      "id": 29,
+      "file": "VoiceRecordings/Questions/Q29-NA.m4a",
+      "duration": 3.477,
+      "questionOnly": true,
+      "q": [
+        0,
+        3.477
+      ],
+      "a": null
+    },
+    {
+      "id": 30,
+      "file": "VoiceRecordings/Questions/Q30.m4a",
+      "duration": 6.891,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.28
+      ],
+      "a": [
+        5.091,
+        6.891
+      ],
+      "pause": {
+        "start": 4.2,
+        "end": 5.141,
+        "dur": 0.941
+      }
+    },
+    {
+      "id": 31,
+      "file": "VoiceRecordings/Questions/Q31.m4a",
+      "duration": 6.379,
+      "questionOnly": false,
+      "q": [
+        0,
+        2.968
+      ],
+      "a": [
+        4.204,
+        6.379
+      ],
+      "pause": {
+        "start": 2.888,
+        "end": 4.254,
+        "dur": 1.366
+      }
+    },
+    {
+      "id": 32,
+      "file": "VoiceRecordings/Questions/Q32.m4a",
+      "duration": 5.781,
+      "questionOnly": false,
+      "q": [
+        0,
+        2.954
+      ],
+      "a": [
+        3.743,
+        5.781
+      ],
+      "pause": {
+        "start": 2.874,
+        "end": 3.793,
+        "dur": 0.919
+      }
+    },
+    {
+      "id": 33,
+      "file": "VoiceRecordings/Questions/Q33.m4a",
+      "duration": 7.659,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.367
+      ],
+      "a": [
+        5.412,
+        7.659
+      ],
+      "pause": {
+        "start": 4.287,
+        "end": 5.462,
+        "dur": 1.175
+      }
+    },
+    {
+      "id": 34,
+      "file": "VoiceRecordings/Questions/Q34.m4a",
+      "duration": 7.488,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.67
+      ],
+      "a": [
+        4.602,
+        7.488
+      ],
+      "pause": {
+        "start": 3.59,
+        "end": 4.652,
+        "dur": 1.061
+      }
+    },
+    {
+      "id": 35,
+      "file": "VoiceRecordings/Questions/Q35.m4a",
+      "duration": 8.768,
+      "questionOnly": false,
+      "q": [
+        0,
+        5.397
+      ],
+      "a": [
+        6.968,
+        8.768
+      ],
+      "pause": {
+        "start": 5.317,
+        "end": 7.018,
+        "dur": 1.701
+      }
+    },
+    {
+      "id": 36,
+      "file": "VoiceRecordings/Questions/Q36.m4a",
+      "duration": 7.403,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.705
+      ],
+      "a": [
+        5.772,
+        7.403
+      ],
+      "pause": {
+        "start": 4.625,
+        "end": 5.822,
+        "dur": 1.197
+      }
+    },
+    {
+      "id": 37,
+      "file": "VoiceRecordings/Questions/Q37.m4a",
+      "duration": 10.901,
+      "questionOnly": false,
+      "q": [
+        0,
+        6.099
+      ],
+      "a": [
+        7.451,
+        10.901
+      ],
+      "pause": {
+        "start": 6.019,
+        "end": 7.501,
+        "dur": 1.482
+      }
+    },
+    {
+      "id": 38,
+      "file": "VoiceRecordings/Questions/Q38.m4a",
+      "duration": 6.72,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.338
+      ],
+      "a": [
+        5.523,
+        6.72
+      ],
+      "pause": {
+        "start": 4.258,
+        "end": 5.573,
+        "dur": 1.315
+      }
+    },
+    {
+      "id": 39,
+      "file": "VoiceRecordings/Questions/Q39.m4a",
+      "duration": 8.085,
+      "questionOnly": false,
+      "q": [
+        0,
+        5.125
+      ],
+      "a": [
+        6.42,
+        8.085
+      ],
+      "pause": {
+        "start": 5.045,
+        "end": 6.47,
+        "dur": 1.425
+      }
+    },
+    {
+      "id": 40,
+      "file": "VoiceRecordings/Questions/Q40.m4a",
+      "duration": 8.0,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.913
+      ],
+      "a": [
+        6.35,
+        8.0
+      ],
+      "pause": {
+        "start": 4.833,
+        "end": 6.4,
+        "dur": 1.568
+      }
+    },
+    {
+      "id": 41,
+      "file": "VoiceRecordings/Questions/Q41.m4a",
+      "duration": 5.867,
+      "questionOnly": false,
+      "q": [
+        0,
+        2.601
+      ],
+      "a": [
+        3.579,
+        5.867
+      ],
+      "pause": {
+        "start": 2.521,
+        "end": 3.629,
+        "dur": 1.108
+      }
+    },
+    {
+      "id": 42,
+      "file": "VoiceRecordings/Questions/Q42.m4a",
+      "duration": 6.464,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.057
+      ],
+      "a": [
+        5.192,
+        6.464
+      ],
+      "pause": {
+        "start": 3.977,
+        "end": 5.242,
+        "dur": 1.265
+      }
+    },
+    {
+      "id": 43,
+      "file": "VoiceRecordings/Questions/Q43.m4a",
+      "duration": 5.184,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.178
+      ],
+      "a": [
+        3.996,
+        5.184
+      ],
+      "pause": {
+        "start": 3.098,
+        "end": 4.046,
+        "dur": 0.948
+      }
+    },
+    {
+      "id": 44,
+      "file": "VoiceRecordings/Questions/Q44.m4a",
+      "duration": 4.16,
+      "questionOnly": false,
+      "q": [
+        0,
+        2.288
+      ],
+      "a": [
+        3.167,
+        4.16
+      ],
+      "pause": {
+        "start": 2.208,
+        "end": 3.217,
+        "dur": 1.009
+      }
+    },
+    {
+      "id": 45,
+      "file": "VoiceRecordings/Questions/Q45.m4a",
+      "duration": 5.013,
+      "questionOnly": false,
+      "q": [
+        0,
+        2.684
+      ],
+      "a": [
+        3.863,
+        5.013
+      ],
+      "pause": {
+        "start": 2.604,
+        "end": 3.913,
+        "dur": 1.309
+      }
+    },
+    {
+      "id": 46,
+      "file": "VoiceRecordings/Questions/Q46.m4a",
+      "duration": 5.781,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.743
+      ],
+      "a": [
+        4.694,
+        5.781
+      ],
+      "pause": {
+        "start": 3.663,
+        "end": 4.744,
+        "dur": 1.08
+      }
+    },
+    {
+      "id": 47,
+      "file": "VoiceRecordings/Questions/Q47.m4a",
+      "duration": 5.781,
+      "questionOnly": false,
+      "q": [
+        0,
+        2.641
+      ],
+      "a": [
+        3.873,
+        5.781
+      ],
+      "pause": {
+        "start": 2.561,
+        "end": 3.923,
+        "dur": 1.361
+      }
+    },
+    {
+      "id": 48,
+      "file": "VoiceRecordings/Questions/Q48.m4a",
+      "duration": 8.0,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.522
+      ],
+      "a": [
+        4.818,
+        8.0
+      ],
+      "pause": {
+        "start": 3.442,
+        "end": 4.868,
+        "dur": 1.427
+      }
+    },
+    {
+      "id": 49,
+      "file": "VoiceRecordings/Questions/Q49.m4a",
+      "duration": 7.147,
+      "questionOnly": false,
+      "q": [
+        0,
+        2.949
+      ],
+      "a": [
+        4.417,
+        7.147
+      ],
+      "pause": {
+        "start": 2.869,
+        "end": 4.467,
+        "dur": 1.598
+      }
+    },
+    {
+      "id": 50,
+      "file": "VoiceRecordings/Questions/Q50.m4a",
+      "duration": 5.44,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.282
+      ],
+      "a": [
+        4.1,
+        5.44
+      ],
+      "pause": {
+        "start": 3.202,
+        "end": 4.15,
+        "dur": 0.948
+      }
+    },
+    {
+      "id": 51,
+      "file": "VoiceRecordings/Questions/Q51.m4a",
+      "duration": 5.867,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.039
+      ],
+      "a": [
+        4.062,
+        5.867
+      ],
+      "pause": {
+        "start": 2.959,
+        "end": 4.112,
+        "dur": 1.153
+      }
+    },
+    {
+      "id": 52,
+      "file": "VoiceRecordings/Questions/Q52.m4a",
+      "duration": 6.123,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.664
+      ],
+      "a": [
+        4.45,
+        6.123
+      ],
+      "pause": {
+        "start": 3.584,
+        "end": 4.5,
+        "dur": 0.917
+      }
+    },
+    {
+      "id": 53,
+      "file": "VoiceRecordings/Questions/Q53.m4a",
+      "duration": 5.44,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.56
+      ],
+      "a": [
+        4.474,
+        5.44
+      ],
+      "pause": {
+        "start": 3.48,
+        "end": 4.524,
+        "dur": 1.044
+      }
+    },
+    {
+      "id": 54,
+      "file": "VoiceRecordings/Questions/Q54.m4a",
+      "duration": 7.488,
+      "questionOnly": false,
+      "q": [
+        0,
+        5.511
+      ],
+      "a": [
+        6.406,
+        7.488
+      ],
+      "pause": {
+        "start": 5.431,
+        "end": 6.456,
+        "dur": 1.025
+      }
+    },
+    {
+      "id": 55,
+      "file": "VoiceRecordings/Questions/Q55.m4a",
+      "duration": 5.611,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.351
+      ],
+      "a": [
+        4.344,
+        5.611
+      ],
+      "pause": {
+        "start": 3.271,
+        "end": 4.394,
+        "dur": 1.123
+      }
+    },
+    {
+      "id": 56,
+      "file": "VoiceRecordings/Questions/Q56.m4a",
+      "duration": 8.427,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.437
+      ],
+      "a": [
+        5.629,
+        8.427
+      ],
+      "pause": {
+        "start": 4.357,
+        "end": 5.679,
+        "dur": 1.322
+      }
+    },
+    {
+      "id": 57,
+      "file": "VoiceRecordings/Questions/Q57.m4a",
+      "duration": 6.635,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.065
+      ],
+      "a": [
+        5.061,
+        6.635
+      ],
+      "pause": {
+        "start": 3.985,
+        "end": 5.111,
+        "dur": 1.125
+      }
+    },
+    {
+      "id": 58,
+      "file": "VoiceRecordings/Questions/Q58.m4a",
+      "duration": 6.72,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.008
+      ],
+      "a": [
+        5.137,
+        6.72
+      ],
+      "pause": {
+        "start": 3.928,
+        "end": 5.187,
+        "dur": 1.26
+      }
+    },
+    {
+      "id": 59,
+      "file": "VoiceRecordings/Questions/Q59.m4a",
+      "duration": 7.488,
+      "questionOnly": false,
+      "q": [
+        0,
+        4.249
+      ],
+      "a": [
+        5.143,
+        7.488
+      ],
+      "pause": {
+        "start": 4.169,
+        "end": 5.193,
+        "dur": 1.024
+      }
+    },
+    {
+      "id": 60,
+      "file": "VoiceRecordings/Questions/Q60.m4a",
+      "duration": 11.328,
+      "questionOnly": false,
+      "q": [
+        0,
+        3.6
+      ],
+      "a": [
+        5.048,
+        11.328
+      ],
+      "pause": {
+        "start": 3.52,
+        "end": 5.098,
+        "dur": 1.578
+      }
+    }
+  ]
+}
