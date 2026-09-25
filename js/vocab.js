@@ -34,11 +34,12 @@ window.VocabApp = (function () {
       card.appendChild(C.el("div", "vocab-cat-name", (cat[lang] || cat.en)));
       var chips = C.el("div", "vocab-chips");
       cat.words.forEach(function (w) {
-        var chip = C.el("button", "vocab-chip");
+        var hasRec = !!C.vocabFile(whichList, w);
+        var chip = C.el("button", "vocab-chip" + (hasRec ? " rec" : ""));
         chip.type = "button";
         chip.appendChild(C.el("span", null, w));
-        if (C.TTS) { var ic = C.el("span", "chip-spk"); ic.textContent = "🔊"; chip.appendChild(ic); }
-        chip.onclick = function () { C.speak(w, chip); };
+        if (hasRec || C.TTS) { var ic = C.el("span", "chip-spk"); ic.textContent = "🔊"; chip.appendChild(ic); }
+        chip.onclick = function () { C.playVocab(whichList, w, chip); };
         chips.appendChild(chip);
       });
       card.appendChild(chips);

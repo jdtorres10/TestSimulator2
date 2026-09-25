@@ -19,7 +19,7 @@ window.CIV = (function () {
   var GOVERNOR_EXTRA = ["Glenn Youngkin (Republican)", "Larry Hogan (Republican)", "Ralph Northam (Democrat)", "Pat McCrory (Republican)"];
 
   var prefs = { lang: "en", state: "virginia", zip: "", district: null };
-  var DATA = { questions: [], categories: [], byId: {}, poolByCat: {}, officeholders: null, stateLocal: null, vocab: null, audioById: {} };
+  var DATA = { questions: [], categories: [], byId: {}, poolByCat: {}, officeholders: null, stateLocal: null, vocab: null, audioById: {}, vocabAudio: { reading: {}, writing: {} } };
   var ZIPDB = {};
   var subs = [];
 
@@ -147,6 +147,15 @@ window.CIV = (function () {
     b.onclick = function (e) { e.stopPropagation(); playClip(id, side, b, fallbackText); };
     return b;
   }
+  function vocabFile(list, word) {
+    var map = DATA.vocabAudio && DATA.vocabAudio[list];
+    return (map && map[word]) || null;
+  }
+  function playVocab(list, word, btn) {
+    var file = vocabFile(list, word);
+    if (file) { playRange(encodeURI(file), 0, null, btn); return; }
+    speak(word, btn);
+  }
 
   // ---- state / district / ZIP ----
   function stateByKey(k) { return STATES.filter(function (s) { return s.key === k; })[0] || STATES[0]; }
@@ -226,13 +235,15 @@ window.CIV = (function () {
       fetch("data/state_local_lookup.json").then(function (r) { return r.json(); }),
       fetch("data/zip_districts.json").then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }),
       fetch("data/vocab.json").then(function (r) { return r.json(); }),
-      fetch("data/audio_manifest.json").then(function (r) { return r.ok ? r.json() : { clips: [] }; }).catch(function () { return { clips: [] }; })
+      fetch("data/audio_manifest.json").then(function (r) { return r.ok ? r.json() : { clips: [] }; }).catch(function () { return { clips: [] }; }),
+      fetch("data/vocab_audio.json").then(function (r) { return r.ok ? r.json() : { reading: {}, writing: {} }; }).catch(function () { return { reading: {}, writing: {} }; })
     ]).then(function (res) {
       DATA.questions = res[0].questions; DATA.categories = res[0].categories;
       DATA.questions.forEach(function (q) { DATA.byId[q.id] = q; });
       DATA.officeholders = res[1]; DATA.stateLocal = res[2]; ZIPDB = res[3] || {}; DATA.vocab = res[4];
       DATA.audioById = {};
       (res[5].clips || []).forEach(function (c) { DATA.audioById[c.id] = c; });
+      DATA.vocabAudio = { reading: res[6].reading || {}, writing: res[6].writing || {} };
       buildPoolByCat();
       done();
     }).catch(function (err) { done(err); });
@@ -246,6 +257,7 @@ window.CIV = (function () {
     on: on, emit: emit, setLang: setLang, setState: setState, setZip: setZip, setDistrict: setDistrict,
     TTS: TTS, speak: speak, cancelSpeech: cancelSpeech, speakButton: speakButton,
     clipFor: clipFor, playClip: playClip, clipButton: clipButton,
+    vocabFile: vocabFile, playVocab: playVocab,
     stateByKey: stateByKey, districtCount: districtCount, resolveZip: resolveZip,
     resolveDynamic: resolveDynamic, dynamicAnswers: dynamicAnswers,
     load: load, lang: function () { return prefs.lang; }

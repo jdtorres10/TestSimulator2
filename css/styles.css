@@ -282,6 +282,7 @@ select {
 .vocab-chips { display:flex; flex-wrap:wrap; gap:6px; }
 .vocab-chip { display:inline-flex; align-items:center; gap:5px; border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:999px; padding:5px 11px; font:inherit; font-size:0.85rem; cursor:pointer; }
 .vocab-chip:hover { border-color:var(--navy-2); }
+.vocab-chip.rec { border-color: var(--navy); }
 .vocab-chip.speaking { border-color:var(--red); background:var(--red-bg); }
 .chip-spk { font-size:0.78rem; opacity:0.55; }
 
