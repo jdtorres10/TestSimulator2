@@ -46,7 +46,7 @@
     var sel = C.el("select", "district-select");
     function fillSel() {
       sel.innerHTML = ""; var ph = C.el("option", null, C.t("selectDistrict")); ph.value = ""; sel.appendChild(ph);
-      for (var i = 1; i <= st.districts; i++) { var o = C.el("option", null, C.t("district") + " " + i); o.value = String(i); if (C.prefs.district === i) o.selected = true; sel.appendChild(o); }
+      for (var i = 1; i <= st.districts; i++) { var o = C.el("option", null, C.t("district") + " " + i); o.value = String(i); if (Number(C.prefs.district) === i) o.selected = true; sel.appendChild(o); }
     }
     fillSel();
     sel.onchange = function () { C.setDistrict(sel.value ? parseInt(sel.value, 10) : null); };
@@ -58,6 +58,11 @@
         else { msg.textContent = C.t("zipNotFound"); msg.className = "zip-msg warn"; }
       }
     };
+    if ((C.prefs.zip || "").length === 5) {
+      var zd = C.resolveZip(C.prefs.state, C.prefs.zip);
+      if (zd && zd >= 1 && zd <= st.districts) { msg.textContent = C.t("zipFound", { n: zd }); msg.className = "zip-msg ok"; }
+      else { msg.textContent = C.t("zipNotFound"); msg.className = "zip-msg warn"; }
+    }
     bar.appendChild(zip); bar.appendChild(sel); bar.appendChild(msg);
   }
 

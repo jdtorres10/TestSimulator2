@@ -45,7 +45,11 @@ window.CIV = (function () {
   function setLang(l) { prefs.lang = l; savePrefs(); emit(); }
   function setState(s) { prefs.state = s; prefs.district = null; prefs.zip = ""; savePrefs(); emit(); }
   function setZip(z) { prefs.zip = z; savePrefs(); }
-  function setDistrict(d) { prefs.district = d; savePrefs(); emit(); }
+  function setDistrict(d) {
+    prefs.district = (d == null || d === "") ? null : parseInt(d, 10);
+    if (prefs.district !== prefs.district) prefs.district = null; // NaN
+    savePrefs(); emit();
+  }
 
   // ---- TTS + recorded clips (Samantha-locked TTS as fallback) ----
   var TTS = ("speechSynthesis" in window) && ("SpeechSynthesisUtterance" in window);
@@ -225,7 +229,16 @@ window.CIV = (function () {
 
   // ---- boot ----
   function load(done) {
-    prefs = loadJSON(LS.prefs, prefs) || prefs;
+    // Merge into the same prefs object C.prefs points at. Reassigning `prefs`
+    // left C.prefs stuck at the defaults, so district/ZIP never stuck in the UI.
+    var saved = loadJSON(LS.prefs, null);
+    if (saved && typeof saved === "object") {
+      if (saved.lang) prefs.lang = saved.lang;
+      if (saved.state) prefs.state = saved.state;
+      prefs.zip = saved.zip || "";
+      prefs.district = (saved.district == null || saved.district === "") ? null : parseInt(saved.district, 10);
+      if (prefs.district !== prefs.district) prefs.district = null;
+    }
     if (["virginia", "north_carolina", "maryland"].indexOf(prefs.state) === -1) prefs.state = "virginia";
     if (!prefs.lang) prefs.lang = "en";
     if (TTS) { voicesReady = window.speechSynthesis.getVoices().length > 0; window.speechSynthesis.onvoiceschanged = function () { window.speechSynthesis.getVoices(); if (!voicesReady) { voicesReady = true; emit(); } }; }
