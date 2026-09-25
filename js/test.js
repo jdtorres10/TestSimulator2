@@ -1,88 +1,61 @@
-/* Test Simulator module — the graded practice exam + topic drills + missed review.
-   Renders into its panel; uses the shared core (CIV) for data, prefs, TTS, and
-   dynamic-question resolution. State/district are set once in the shared location bar. */
+/* Test Simulator — oral, self-graded practice using the same 128-question
+   bank as flash cards. English-only stems and answers; recorded Q/A audio;
+   student marks right/wrong. Full exam: 20 random, 12 to pass, stops at 12
+   correct or 9 wrong. Topic drills and missed-question review kept. */
 window.TestApp = (function () {
   "use strict";
   var C = window.CIV;
   var EXAM_SIZE = 20, PASS_NEEDED = 12, MAX_WRONG = EXAM_SIZE - PASS_NEEDED + 1, TTL = 7 * 24 * 60 * 60 * 1000;
-  var container = null, pendingMode = null, pendingCat = null, session = null;
+  var SESSION_VER = 2;
+  var container = null, pendingMode = null, pendingCat = null, session = null, revealed = false;
 
-  // ---- distractors ----
-  var NUM_DURATIONS = [{ en: "2 years", es: "2 años" }, { en: "4 years", es: "4 años" }, { en: "6 years", es: "6 años" }, { en: "8 years", es: "8 años" }, { en: "10 years", es: "10 años" }];
-  var NUM_YEARS = ["1776", "1787", "1865", "1870", "1920", "1929", "1941", "2001"].map(function (n) { return { en: n, es: n }; });
-  var NUM_COUNTS = ["2", "5", "9", "13", "25", "50", "100", "435"].map(function (n) { return { en: n, es: n }; });
-  function numShape(s) { s = String(s).trim(); if (/\d+\s*(years?|años?)/i.test(s)) return "dur"; if (/^\d{4}$/.test(s)) return "year"; if (/^\d{1,3}$/.test(s)) return "count"; return null; }
-  function distractorPool(q) {
-    var ex = {}; q.acceptable.forEach(function (a) { ex[a.en.toLowerCase()] = true; });
-    var seen = {}, pool = [];
-    (C.DATA.poolByCat[q.cat] || []).forEach(function (p) { var k = p.en.toLowerCase(); if (p.qid === q.id || ex[k] || seen[k]) return; seen[k] = true; pool.push({ en: p.en, es: p.es }); });
-    return pool;
+  function answerList(q) {
+    var pairs = q.dynamic ? C.dynamicAnswers(q) : (q.acceptable || []);
+    return pairs.map(function (p) { return p.en; }).filter(Boolean);
   }
-  function autoDistractors(q) {
-    var ex = {}; q.acceptable.forEach(function (a) { ex[a.en.toLowerCase()] = true; });
-    var shape = (q.acceptable.length === 1) ? numShape(q.acceptable[0].en) : null;
-    if (shape) {
-      var seenN = {}, poolN = [];
-      function addN(p) { var k = p.en.toLowerCase(); if (ex[k] || seenN[k]) return; seenN[k] = true; poolN.push({ en: p.en, es: p.es }); }
-      (C.DATA.poolByCat[q.cat] || []).forEach(function (p) { if (p.qid !== q.id && numShape(p.en) === shape) addN(p); });
-      (shape === "dur" ? NUM_DURATIONS : shape === "year" ? NUM_YEARS : NUM_COUNTS).forEach(addN);
-      return C.sample(poolN, 3);
-    }
-    return C.sample(distractorPool(q), 3);
-  }
-
-  // ---- "name N" grouping ----
-  var COUNT_WORDS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6 };
-  function parseCount(stemEn) { var m = String(stemEn).toLowerCase().match(/(?:name|mention|give|describe|list|what are(?: the)?)\s+(one|two|three|four|five|six)\b/); return m ? COUNT_WORDS[m[1]] : 1; }
-  function combineGroup(items) { return { en: items.map(function (x) { return x.en; }).join("; "), es: items.map(function (x) { return x.es; }).join("; ") }; }
-
-  function optionObj(pair) { var showAlt = (C.prefs.lang === "es"); return { en: pair.en, es: pair.es, text: pair[C.prefs.lang], alt: (showAlt && pair.en !== pair.es) ? pair.en : null }; }
-
+  function joinAnswers(q) { return answerList(q).join("; "); }
   function buildQuestion(id) {
-    var q = C.DATA.byId[id], showAlt = (C.prefs.lang === "es"), correct, opts;
-    if (q.dynamic) { var r = C.resolveDynamic(q); correct = r.correct; opts = [correct].concat(C.sample(r.distractors, 3)).map(optionObj); }
-    else {
-      var n = parseCount(q.q.en);
-      if (n >= 2 && q.acceptable.length >= 2) {
-        var groupN = Math.min(n, q.acceptable.length);
-        correct = combineGroup(C.sample(q.acceptable, groupN));
-        var pool = C.shuffle(distractorPool(q)), groups = [];
-        for (var g = 0; g < 3 && pool.length; g++) groups.push(combineGroup(pool.splice(0, Math.min(groupN, pool.length))));
-        opts = [correct].concat(groups).map(optionObj);
-      } else { correct = C.pick(q.acceptable); opts = [correct].concat(C.sample(autoDistractors(q), 3)).map(optionObj); }
-    }
-    opts = C.shuffle(opts);
-    var answer = 0; for (var i = 0; i < opts.length; i++) if (opts[i].en === correct.en) { answer = i; break; }
-    return { id: id, cat: q.cat, dynamic: q.dynamic, prompt: q.q[C.prefs.lang], promptAlt: showAlt ? q.q.en : null, options: opts, answer: answer, correctText: correct[C.prefs.lang], correctAlt: showAlt ? correct.en : null, acceptableAll: q.acceptable };
+    var q = C.DATA.byId[id];
+    return {
+      id: id,
+      cat: q.cat,
+      dynamic: q.dynamic,
+      prompt: q.q.en,
+      answersEn: answerList(q)
+    };
   }
 
-  // ---- session ----
   function buildQueue(mode, cat) {
     if (mode === "full") return C.sample(C.DATA.questions.map(function (q) { return q.id; }), EXAM_SIZE);
     if (mode === "category") return C.shuffle(C.DATA.questions.filter(function (q) { return q.cat === cat; }).map(function (q) { return q.id; }));
     if (mode === "missed") return C.shuffle(C.getMissed());
     return [];
   }
-  function newSession(mode, cat) { return { mode: mode, cat: cat || null, state: C.prefs.state, district: C.prefs.district, lang: C.prefs.lang, queue: buildQueue(mode, cat), idx: 0, answers: {}, correct: 0, wrong: 0, finished: false, passed: null, createdAt: Date.now() }; }
+  function newSession(mode, cat) {
+    return { version: SESSION_VER, mode: mode, cat: cat || null, state: C.prefs.state, district: C.prefs.district, lang: C.prefs.lang, queue: buildQueue(mode, cat), idx: 0, answers: {}, correct: 0, wrong: 0, finished: false, passed: null, createdAt: Date.now() };
+  }
   function isGraded(s) { return s.mode === "full"; }
   function persist() { if (session) C.saveJSON(C.LS.session, session); }
   function examDecided(s) { return s.mode === "full" && (s.correct >= PASS_NEEDED || s.wrong >= MAX_WRONG); }
   function finishSession() { session.finished = true; if (session.mode === "full") session.passed = session.correct >= PASS_NEEDED; persist(); renderResults(); }
+  function savedUsable(saved) {
+    return saved && saved.version === SESSION_VER && !saved.finished && (Date.now() - saved.createdAt) < TTL && saved.queue && saved.queue.length;
+  }
 
   var el = C.el, t = C.t;
 
   function renderStart() {
-    C.cancelSpeech(); session = null; container.innerHTML = "";
+    C.cancelSpeech(); session = null; revealed = false; container.innerHTML = "";
     var head = el("div", "panel-head"); head.appendChild(el("div", "panel-title", t("tabTest"))); container.appendChild(head);
 
     var saved = C.loadJSON(C.LS.session, null);
-    if (saved && !saved.finished && (Date.now() - saved.createdAt) < TTL && saved.queue && saved.queue.length) {
+    if (savedUsable(saved)) {
       var rc = el("div", "card"); rc.appendChild(el("div", "section-title", t("resumeTitle"))); rc.appendChild(el("p", "help", t("resumeBody")));
       var row = el("div", "btn-row");
       var yes = el("button", "btn primary", t("resume")); yes.onclick = function () { session = saved; renderQuestion(); };
       var no = el("button", "btn ghost", t("startNew")); no.onclick = function () { C.delKey(C.LS.session); renderStart(); };
       row.appendChild(yes); row.appendChild(no); rc.appendChild(row); container.appendChild(rc);
-    } else if (saved && saved.finished) { C.delKey(C.LS.session); }
+    } else if (saved) { C.delKey(C.LS.session); }
 
     var card = el("div", "card"); card.appendChild(el("div", "section-title", t("chooseMode")));
     var modes = el("div", "modes");
@@ -135,7 +108,7 @@ window.TestApp = (function () {
   }
 
   function renderQuestion() {
-    C.cancelSpeech(); persist();
+    C.cancelSpeech(); persist(); revealed = false;
     if (session.idx >= session.queue.length) { finishSession(); return; }
     var q = buildQuestion(session.queue[session.idx]); container.innerHTML = "";
     var total = session.queue.length, card = el("div", "card");
@@ -151,51 +124,59 @@ window.TestApp = (function () {
     var bar = el("div", "bar"); var span = el("span"); span.style.width = (session.idx / total * 100) + "%"; bar.appendChild(span); card.appendChild(bar);
 
     if (q.dynamic) card.appendChild(el("span", "badge dyn", t("dynamicBadge")));
-    var englishPrompt = q.promptAlt || q.prompt;
     var qRow = el("div", "q-row");
-    if (C.TTS) qRow.appendChild(C.speakButton(englishPrompt));
+    var qBtn = C.clipButton(q.id, "q", q.prompt);
+    if (qBtn) qRow.appendChild(qBtn);
     qRow.appendChild(el("div", "qtext", q.prompt)); card.appendChild(qRow);
-    if (q.promptAlt) card.appendChild(el("div", "qsub alt-en", q.promptAlt));
+    card.appendChild(el("p", "help say-first", t("sayAnswerFirst")));
 
     if (C.TTS && C.loadJSON(C.LS.soundHint, null) !== 1) {
       var hint = el("div", "sound-hint"); hint.appendChild(el("span", null, "🔇 " + t("noSoundHint")));
       var x = el("button", "hint-x", "×"); x.type = "button"; x.setAttribute("aria-label", t("dismiss"));
       x.onclick = function () { C.saveJSON(C.LS.soundHint, 1); hint.remove(); }; hint.appendChild(x); card.appendChild(hint);
     }
-    renderMC(card, q); container.appendChild(card); window.scrollTo(0, 0);
+
+    var revealHost = el("div"); revealHost.id = "test-reveal";
+    var show = el("button", "btn primary", t("revealAnswer"));
+    show.onclick = function () { renderAnswerPhase(revealHost, card, q); };
+    revealHost.appendChild(el("div", "btn-row")).appendChild(show);
+    card.appendChild(revealHost);
+    container.appendChild(card); window.scrollTo(0, 0);
   }
 
-  function feedbackBlock(correct, q) {
-    var fb = el("div", "feedback " + (correct ? "ok" : "no"));
-    var v = el("div", "verdict"); v.appendChild(document.createTextNode((correct ? "✓ " : "✕ ") + (correct ? t("correct") : t("incorrect")))); fb.appendChild(v);
-    if (q.correctText) { var off = el("div", "official"); off.appendChild(el("b", null, t("correctAnswer") + ": ")); off.appendChild(document.createTextNode(q.correctText)); fb.appendChild(off); if (q.correctAlt) fb.appendChild(el("div", "official alt-en", q.correctAlt)); }
-    if (q.acceptableAll && q.acceptableAll.length > 1) {
-      var all = el("div", "official all-acc"); all.appendChild(el("b", null, t("allAcceptable") + ": ")); all.appendChild(document.createTextNode(q.acceptableAll.map(function (a) { return a[C.prefs.lang]; }).join("; "))); fb.appendChild(all);
-      if (C.prefs.lang === "es") fb.appendChild(el("div", "official alt-en", q.acceptableAll.map(function (a) { return a.en; }).join("; ")));
-    }
-    return fb;
+  function renderAnswerPhase(host, card, q) {
+    if (revealed) return; revealed = true;
+    C.cancelSpeech();
+    host.innerHTML = "";
+    var block = el("div", "answer-block");
+    var aRow = el("div", "q-row");
+    var aText = q.answersEn.join("; ") || "—";
+    var aBtn = C.clipButton(q.id, "a", aText);
+    if (aBtn) aRow.appendChild(aBtn);
+    var lab = el("div");
+    lab.appendChild(el("div", "answer-label", t("allAcceptable")));
+    lab.appendChild(el("div", "answer-en", aText));
+    aRow.appendChild(lab);
+    block.appendChild(aRow);
+    host.appendChild(block);
+
+    var grade = el("div", "grade-row");
+    var yes = el("button", "btn grade-right", t("markRight"));
+    var no = el("button", "btn grade-wrong", t("markWrong"));
+    yes.onclick = function () { yes.disabled = no.disabled = true; recordAndAdvance(q, true); };
+    no.onclick = function () { yes.disabled = no.disabled = true; recordAndAdvance(q, false); };
+    grade.appendChild(yes); grade.appendChild(no);
+    host.appendChild(grade);
   }
-  function recordAnswer(q, ok, choice) { session.answers[q.id] = { correct: ok, choice: choice, prompt: q.prompt, correctText: q.correctText }; if (ok) session.correct++; else session.wrong++; if (ok) C.removeMissed(q.id); else C.addMissed(q.id); persist(); }
-  function advanceControls(card) {
-    var row = el("div", "btn-row"), last = session.idx >= session.queue.length - 1, decided = examDecided(session);
-    var b = el("button", "btn primary", (last || decided) ? t("finish") : t("next"));
-    b.onclick = function () { if (decided) { finishSession(); return; } session.idx++; if (session.idx >= session.queue.length) finishSession(); else renderQuestion(); };
-    row.appendChild(b); card.appendChild(row);
-  }
-  function renderMC(card, q) {
-    var opts = el("div", "options"), answered = false;
-    q.options.forEach(function (opt, i) {
-      var b = el("button", "opt"); b.appendChild(el("span", "mark", String.fromCharCode(65 + i)));
-      var body = el("div", "opt-body"); body.appendChild(el("span", null, opt.text)); if (opt.alt) body.appendChild(el("span", "alt-en", opt.alt)); b.appendChild(body);
-      b.onclick = function () {
-        if (answered) return; answered = true;
-        var correct = (i === q.answer);
-        Array.prototype.forEach.call(opts.children, function (child, ci) { child.disabled = true; if (ci === q.answer) child.classList.add("correct"); if (ci === i && !correct) child.classList.add("wrong"); });
-        recordAnswer(q, correct, i); card.appendChild(feedbackBlock(correct, q)); advanceControls(card);
-      };
-      opts.appendChild(b);
-    });
-    card.appendChild(opts);
+
+  function recordAndAdvance(q, ok) {
+    session.answers[q.id] = { correct: ok, prompt: q.prompt, correctText: q.answersEn.join("; ") };
+    if (ok) { session.correct++; C.removeMissed(q.id); }
+    else { session.wrong++; C.addMissed(q.id); }
+    persist();
+    if (examDecided(session) || session.idx >= session.queue.length - 1) { finishSession(); return; }
+    session.idx++;
+    renderQuestion();
   }
 
   function renderResults() {
@@ -205,7 +186,7 @@ window.TestApp = (function () {
       var hero = el("div", "result-hero " + (session.passed ? "pass" : "fail"));
       hero.appendChild(el("div", "big", session.passed ? t("passTitle") : t("failTitle")));
       var sn = el("div", "score-num"); sn.appendChild(document.createTextNode(session.correct)); var sm = el("small"); sm.textContent = " / " + total; sn.appendChild(sm); hero.appendChild(sn);
-      hero.appendChild(el("p", "help", t("passNeeded"))); card.appendChild(hero);
+      hero.appendChild(el("p", "help", session.passed ? t("passBody") : t("failBody"))); card.appendChild(hero);
       if (examDecided(session) && answered < total) { var note = el("div", "info-card"); note.textContent = t("endedEarly"); card.appendChild(note); }
     } else {
       var h2 = el("div", "result-hero"); h2.appendChild(el("div", "big", session.mode === "category" ? t("drillDone") : t("missedDone")));
@@ -220,14 +201,13 @@ window.TestApp = (function () {
 
     var rev = el("div", "card"); rev.appendChild(el("div", "section-title", t("reviewAnswers")));
     session.queue.forEach(function (id, i) {
-      var a = session.answers[id], item = el("div", "review-item"), q = C.DATA.byId[id], showAlt = (C.prefs.lang === "es");
-      item.appendChild(el("div", "rq", (i + 1) + ". " + q.q[C.prefs.lang])); if (showAlt) item.appendChild(el("div", "alt-en", q.q.en));
+      var a = session.answers[id], item = el("div", "review-item"), q = C.DATA.byId[id];
+      item.appendChild(el("div", "rq", (i + 1) + ". " + q.q.en));
       var ra = el("div", "ra");
       if (!a) ra.appendChild(el("span", "tag skip", t("skipped")));
       else {
         ra.appendChild(el("span", "tag " + (a.correct ? "ok" : "no"), (a.correct ? "✓ " : "✕ ") + (a.correct ? t("correct") : t("incorrect"))));
-        if (q.acceptable && q.acceptable.length > 1) { ra.appendChild(el("div", null, t("allAcceptable") + ": " + q.acceptable.map(function (x) { return x[C.prefs.lang]; }).join("; "))); if (showAlt) ra.appendChild(el("div", "alt-en", q.acceptable.map(function (x) { return x.en; }).join("; "))); }
-        else ra.appendChild(el("div", null, t("correctAnswer") + ": " + (a.correctText || "")));
+        ra.appendChild(el("div", null, t("allAcceptable") + ": " + (a.correctText || joinAnswers(q))));
       }
       item.appendChild(ra); rev.appendChild(item);
     });
@@ -236,7 +216,7 @@ window.TestApp = (function () {
 
   function init(elm) {
     container = elm;
-    C.on(function () { // lang/state change: re-render whichever screen is active
+    C.on(function () {
       if (session && !session.finished) { session.lang = C.prefs.lang; renderQuestion(); }
       else if (session && session.finished) renderResults();
       else renderStart();
